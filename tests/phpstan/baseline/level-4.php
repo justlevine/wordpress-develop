@@ -80,9 +80,33 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to function is_null\\(\\) with bool\\|WP_Error will always evaluate to false\\.$#',
+	'message' => '#^Call to function is_null\\(\\) with bool will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Error will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 6,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with array\\<int\\> will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with int will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with int\\<min, \\-1\\>\\|int\\<1, max\\> will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
@@ -162,6 +186,24 @@ $ignoreErrors[] = [
 	'identifier' => 'booleanNot.alwaysTrue',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-language-pack-upgrader.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with string will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-plugin-upgrader.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with bool will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-theme-upgrader.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with string will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-theme-upgrader.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Post\\:\\:\\$post_type \\(string\\) in isset\\(\\) is not nullable\\.$#',
@@ -464,6 +506,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-screen.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_array\\(\\) with non\\-empty\\-array will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-site-health.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Result of && is always false\\.$#',
 	'identifier' => 'booleanAnd.alwaysFalse',
 	'count' => 2,
@@ -495,6 +543,12 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Call to function is_object\\(\\) with WP_Upgrader will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-upgrader-skin.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Error will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-upgrader-skin.php',
@@ -818,6 +872,24 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ms.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term\\|false will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with array\\{\\} will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-empty\\-array\\<int\\|WP_Post\\> will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^While loop condition is always true\\.$#',
 	'identifier' => 'while.alwaysTrue',
 	'count' => 1,
@@ -1040,6 +1112,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/my-sites.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term\\|false will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-admin/nav-menus.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always true\\.$#',
 	'identifier' => 'booleanNot.alwaysTrue',
 	'count' => 1,
@@ -1092,6 +1170,12 @@ $ignoreErrors[] = [
 	'identifier' => 'booleanAnd.alwaysFalse',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/themes.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with false will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-admin/update.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Block_Type\\:\\:\\$editor_style_handles \\(array\\<string\\>\\) in isset\\(\\) is not nullable\\.$#',
@@ -1278,6 +1362,12 @@ $ignoreErrors[] = [
 	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/capabilities.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Function get_category\\(\\) never returns null so it can be removed from the return type\\.$#',
+	'identifier' => 'return.unusedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/category.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always false\\.$#',
@@ -1658,6 +1748,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-falsy\\-string will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-editor.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Ternary operator condition is always false\\.$#',
 	'identifier' => 'ternary.alwaysFalse',
 	'count' => 3,
@@ -1844,7 +1940,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-meta-query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Instanceof between int\\<min, \\-1\\>\\|int\\<1, max\\>\\|WP_Error and WP_Post will always evaluate to false\\.$#',
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-empty\\-array\\<WP_Term\\> will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-navigation-fallback.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Instanceof between int\\<min, \\-1\\>\\|int\\<1, max\\> and WP_Post will always evaluate to false\\.$#',
 	'identifier' => 'instanceof.alwaysFalse',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-navigation-fallback.php',
@@ -2078,6 +2180,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with array will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with array\\<int\\|string\\|WP_Term\\>\\|string will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always false\\.$#',
 	'identifier' => 'booleanNot.alwaysFalse',
 	'count' => 1,
@@ -2164,6 +2278,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Call to function is_array\\(\\) with mixed will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Error will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
 ];
@@ -2530,6 +2650,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Strict comparison using \\=\\=\\= between null and string will always evaluate to false\\.$#',
 	'identifier' => 'identical.alwaysFalse',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/compat.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
+	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/compat.php',
 ];
@@ -3194,6 +3320,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_User will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-empty\\-array\\<int\\> will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always false\\.$#',
 	'identifier' => 'booleanNot.alwaysFalse',
 	'count' => 1,
@@ -3203,6 +3341,12 @@ $ignoreErrors[] = [
 	'message' => '#^Property WP_Post\\:\\:\\$filter \\(string\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
 	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Property WP_Post\\:\\:\\$post_status \\(string\\) in isset\\(\\) is not nullable\\.$#',
+	'identifier' => 'isset.property',
+	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
 ];
 $ignoreErrors[] = [
@@ -3374,8 +3518,32 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/ms-site.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 3,
+	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu-template.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Call to function is_array\\(\\) with array will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 3,
+	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term\\|false will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with int will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
 ];
@@ -3388,7 +3556,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Term\\:\\:\\$term_id \\(int\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
 ];
 $ignoreErrors[] = [
@@ -3512,6 +3680,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/pluggable.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Term will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/post-formats.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Call to function is_array\\(\\) with string will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 1,
@@ -3521,6 +3695,12 @@ $ignoreErrors[] = [
 	'message' => '#^Call to function is_bool\\(\\) with int\\|WP_Post\\|null will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-falsy\\-string will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
 ];
 $ignoreErrors[] = [
@@ -3568,6 +3748,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Call to function is_string\\(\\) with non\\-falsy\\-string will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Post will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
 ];
@@ -3698,14 +3884,20 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Comparison operation "\\>" between 1 and 0 is always true\\.$#',
-	'identifier' => 'greater.alwaysTrue',
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Post\\|null will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with non\\-empty\\-array will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
+	'message' => '#^Comparison operation "\\>" between 1 and 0 is always true\\.$#',
+	'identifier' => 'greater.alwaysTrue',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
 ];
@@ -3740,13 +3932,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-global-styles-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to function is_null\\(\\) with bool\\|WP_Error will always evaluate to false\\.$#',
+	'message' => '#^Call to function is_null\\(\\) with bool will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Call to function is_string\\(\\) with string will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Error will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
@@ -4016,6 +4214,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Function get_term_to_edit\\(\\) never returns null so it can be removed from the return type\\.$#',
+	'identifier' => 'return.unusedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Offset \'template\' on array\\{0\\: false, label\\: string\\|WP_Taxonomy, args\\: array\\{\\}\\}\\|array\\{name\\: string, label\\: string\\|WP_Taxonomy, labels\\: stdClass, description\\: string, public\\: bool, publicly_queryable\\: bool, hierarchical\\: bool, show_ui\\: bool, \\.\\.\\.\\} in empty\\(\\) does not exist\\.$#',
 	'identifier' => 'empty.offset',
 	'count' => 1,
@@ -4094,6 +4298,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_Error will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with WP_User will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Instanceof between WP_User and WP_User will always evaluate to true\\.$#',
 	'identifier' => 'instanceof.alwaysTrue',
 	'count' => 1,
@@ -4156,6 +4372,12 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^If condition is always false\\.$#',
 	'identifier' => 'if.alwaysFalse',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-login.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Instanceof between WP_User and WP_User will always evaluate to true\\.$#',
+	'identifier' => 'instanceof.alwaysTrue',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-login.php',
 ];

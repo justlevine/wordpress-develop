@@ -86,6 +86,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-themes-list-table.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Property WP_Comment\\:\\:\\$comment_ID \\(string\\) does not accept int\\.$#',
+	'identifier' => 'assign.propertyType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/comment.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Property WP_Comment\\:\\:\\$comment_post_ID \\(string\\) does not accept int\\.$#',
+	'identifier' => 'assign.propertyType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/comment.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Function WP_Filesystem\\(\\) should return bool\\|null but empty return statement found\\.$#',
 	'identifier' => 'return.empty',
 	'count' => 1,
@@ -102,12 +114,6 @@ $ignoreErrors[] = [
 	'identifier' => 'return.empty',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/misc.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function wp_get_nav_menu_to_edit\\(\\) should return string\\|WP_Error but returns WP_Term\\|false\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Function delete_plugins\\(\\) should return bool\\|WP_Error\\|null but empty return statement found\\.$#',
@@ -464,12 +470,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter &\\$query by\\-ref type of method WP_Tax_Query\\:\\:transform_query\\(\\) expects array, array\\<int\\|string\\|WP_Term\\>\\|string given\\.$#',
-	'identifier' => 'parameterByRef.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Static property WP_Tax_Query\\:\\:\\$no_results \\(string\\) does not accept default value of type array\\<string, list\\<string\\>\\>\\.$#',
 	'identifier' => 'property.defaultValue',
 	'count' => 1,
@@ -618,6 +618,12 @@ $ignoreErrors[] = [
 	'identifier' => 'assign.propertyType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-user.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Method wp_xmlrpc_server\\:\\:mw_newPost\\(\\) should return int\\|IXR_Error but returns string\\.$#',
+	'identifier' => 'return.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-xmlrpc-server.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method wp_xmlrpc_server\\:\\:wp_newTerm\\(\\) should return int\\|IXR_Error but returns string\\.$#',
@@ -788,25 +794,19 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/meta.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function wp_update_nav_menu_item\\(\\) should return int\\|WP_Error but returns WP_Term\\|false\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Function wp_set_all_user_settings\\(\\) should return bool\\|null but empty return statement found\\.$#',
 	'identifier' => 'return.empty',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/option.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function wp_post_revision_title\\(\\) should return string\\|false but returns array\\{\\}\\|null\\.$#',
+	'message' => '#^Function wp_post_revision_title\\(\\) should return string\\|false but returns null\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function wp_post_revision_title_expanded\\(\\) should return string\\|false but returns array\\{\\}\\|null\\.$#',
+	'message' => '#^Function wp_post_revision_title_expanded\\(\\) should return string\\|false but returns null\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
@@ -819,18 +819,6 @@ $ignoreErrors[] = [
 ];
 $ignoreErrors[] = [
 	'message' => '#^Function wp_set_post_categories\\(\\) should return array\\|WP_Error\\|false but returns true\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function wp_trash_post\\(\\) should return WP_Post\\|false\\|null but returns array\\{\\}\\|null\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function wp_untrash_post\\(\\) should return WP_Post\\|false\\|null but returns array\\{\\}\\|null\\.$#',
 	'identifier' => 'return.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
@@ -911,12 +899,6 @@ $ignoreErrors[] = [
 	'message' => '#^Function _wp_preview_post_thumbnail_filter\\(\\) should return array\\|null but returns string\\.$#',
 	'identifier' => 'return.type',
 	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/revision.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function wp_delete_post_revision\\(\\) should return WP_Post\\|false\\|null but returns array\\{\\}\\|null\\.$#',
-	'identifier' => 'return.type',
-	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/revision.php',
 ];
 $ignoreErrors[] = [
