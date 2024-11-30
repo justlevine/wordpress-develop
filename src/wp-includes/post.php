@@ -963,7 +963,8 @@ function _wp_relative_upload_path( $path ) {
  * @param string $output Optional. The required return type. One of OBJECT, ARRAY_A, or ARRAY_N, which
  *                       correspond to a WP_Post object, an associative array, or a numeric array,
  *                       respectively. Default OBJECT.
- * @return WP_Post[]|array[]|int[] Array of post objects, arrays, or IDs, depending on `$output`.
+ *
+ * @return ($output is 'OBJECT' ? WP_Post[] : array[])|int[] Array of post objects, arrays, or IDs, depending on `$output`.
  */
 function get_children( $args = '', $output = OBJECT ) {
 	$kids = array();
@@ -1086,8 +1087,7 @@ function get_extended( $post ) {
  *                                 respectively. Default OBJECT.
  * @param string           $filter Optional. Type of filter to apply. Accepts 'raw', 'edit', 'db',
  *                                 or 'display'. Default 'raw'.
- * @return WP_Post|array|null Type corresponding to $output on success or null on failure.
- *                            When $output is OBJECT, a `WP_Post` instance is returned.
+ * @return ($output is 'OBJECT' ? WP_Post : array)|null Post data on success, or null on failure.
  */
 function get_post( $post = null, $output = OBJECT, $filter = 'raw' ) {
 	if ( empty( $post ) && isset( $GLOBALS['post'] ) ) {
@@ -5993,7 +5993,8 @@ function get_all_page_ids() {
  *                            respectively. Default OBJECT.
  * @param string      $filter Optional. How the return value should be filtered. Accepts 'raw',
  *                            'edit', 'db', 'display'. Default 'raw'.
- * @return WP_Post|array|null WP_Post or array on success, null on failure.
+ *
+ * @return ($output is 'OBJECT' ? WP_Post : array)|null Post data on success, or null on failure.
  */
 function get_page( $page, $output = OBJECT, $filter = 'raw' ) {
 	return get_post( $page, $output, $filter );
@@ -6011,7 +6012,8 @@ function get_page( $page, $output = OBJECT, $filter = 'raw' ) {
  *                                correspond to a WP_Post object, an associative array, or a numeric array,
  *                                respectively. Default OBJECT.
  * @param string|array $post_type Optional. Post type or array of post types. Default 'page'.
- * @return WP_Post|array|null WP_Post (or array) on success, or null on failure.
+ *
+ * @return ($output is 'OBJECT' ? WP_Post : array)|null Post data on success, or null on failure.
  */
 function get_page_by_path( $page_path, $output = OBJECT, $post_type = 'page' ) {
 	global $wpdb;

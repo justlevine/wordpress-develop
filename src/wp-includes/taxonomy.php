@@ -971,8 +971,10 @@ function get_tax_sql( $tax_query, $primary_table, $primary_id_column ) {
  *                                     correspond to a WP_Term object, an associative array, or a numeric array,
  *                                     respectively. Default OBJECT.
  * @param string             $filter   Optional. How to sanitize term fields. Default 'raw'.
- * @return WP_Term|array|WP_Error|null WP_Term instance (or array) on success, depending on the `$output` value.
- *                                     WP_Error if `$taxonomy` does not exist. Null for miscellaneous failure.
+ *
+ * @return ($output is 'OBJECT' ? WP_Term : array)|WP_Error|null Term data on success,
+ *                                                               WP_Error if `$taxonomy` does not exist.
+ *                                                               Null for miscellaneous failure.
  */
 function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 	if ( empty( $term ) ) {
@@ -1093,8 +1095,10 @@ function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
  *                             correspond to a WP_Term object, an associative array, or a numeric array,
  *                             respectively. Default OBJECT.
  * @param string     $filter   Optional. How to sanitize term fields. Default 'raw'.
- * @return WP_Term|array|false WP_Term instance (or array) on success, depending on the `$output` value.
- *                             False if `$taxonomy` does not exist or `$term` was not found.
+ *
+ * @return ( $output is 'OBJECT' ? WP_Term : array )|false Term data on success,
+ *                                                         False if `$taxonomy` does not exist,
+ *                                                         Or `$term` was not found.
  */
 function get_term_by( $field, $value, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 
