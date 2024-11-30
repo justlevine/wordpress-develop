@@ -362,7 +362,7 @@ class WP_HTML_Processor_State {
 	 * @since 6.4.0
 	 * @deprecated 6.8.0 WP_HTML_Processor tracks the context_node internally.
 	 *
-	 * @var null
+	 * @var array{string,array}|null
 	 */
 	public $context_node = null;
 
