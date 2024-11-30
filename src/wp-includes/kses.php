@@ -46,7 +46,7 @@
  * @see wp_kses_allowed_html()
  * @since 1.2.0
  *
- * @var array[]|false Array of default allowable HTML tags, or false to use the defaults.
+ * @const array[]|false Array of default allowable HTML tags, or false to use the defaults.
  */
 if ( ! defined( 'CUSTOM_TAGS' ) ) {
 	define( 'CUSTOM_TAGS', false );
