@@ -602,6 +602,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function _get_list_table$#',
+	'identifier' => 'argument.templateType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Function wp_link_manager_disabled_message\\(\\) has no return type specified\\.$#',
 	'identifier' => 'missingType.return',
 	'count' => 1,
@@ -6876,6 +6882,12 @@ $ignoreErrors[] = [
 	'identifier' => 'missingType.return',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-post-type.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function sanitize_post$#',
+	'identifier' => 'argument.templateType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-post.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method WP_Query\\:\\:init\\(\\) has no return type specified\\.$#',

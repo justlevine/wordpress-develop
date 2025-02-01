@@ -1598,6 +1598,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/pluggable.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$attachment of function is_attachment expects array\\<int\\|string\\>\\|int\\|string, WP_Post given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$url of function user_trailingslashit expects string, int\\<min, 0\\>\\|int\\<2, max\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -1654,7 +1660,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$data_object of method WP_REST_Controller\\:\\:update_additional_fields_for_object\\(\\) expects object, array given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php',
 ];
 $ignoreErrors[] = [
@@ -1728,6 +1734,12 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$data_object of method WP_REST_Controller\\:\\:update_additional_fields_for_object\\(\\) expects object, array given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$value of method WP_HTTP_Response\\:\\:header\\(\\) expects string, int given\\.$#',
@@ -1828,13 +1840,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$fallback_title of function sanitize_title expects string, int given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$fallback_title of function sanitize_title expects string, int\\|WP_Error given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
 ];
 $ignoreErrors[] = [

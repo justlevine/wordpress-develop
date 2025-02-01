@@ -2,61 +2,19 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/_index.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method inline_edit\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/edit-tags.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method inline_edit\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/edit.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to protected property WP_List_Table\\:\\:\\$screen\\.$#',
+	'message' => '#^Access to protected property WP_Privacy_Data_Removal_Requests_List_Table\\:\\:\\$screen\\.$#',
 	'identifier' => 'property.protected',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/erase-personal-data.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method embed_scripts\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/erase-personal-data.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method process_bulk_action\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/erase-personal-data.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to protected property WP_List_Table\\:\\:\\$screen\\.$#',
+	'message' => '#^Access to protected property WP_Privacy_Data_Export_Requests_List_Table\\:\\:\\$screen\\.$#',
 	'identifier' => 'property.protected',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/export-personal-data.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method embed_scripts\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/export-personal-data.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method process_bulk_action\\(\\) on WP_List_Table\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/export-personal-data.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to protected property WP_List_Table\\:\\:\\$screen\\.$#',
+	'message' => '#^Access to protected property WP_Posts_List_Table\\:\\:\\$screen\\.$#',
 	'identifier' => 'property.protected',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
@@ -76,30 +34,6 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$themes on array\\|object\\.$#',
 	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method get_error_message\\(\\) on array\\|object\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method WP_List_Table\\:\\:display_rows\\(\\) invoked with 2 parameters, 0 required\\.$#',
-	'identifier' => 'arguments.count',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method WP_List_Table\\:\\:single_row\\(\\) invoked with 2 parameters, 1 required\\.$#',
-	'identifier' => 'arguments.count',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method WP_List_Table\\:\\:single_row\\(\\) invoked with 3 parameters, 1 required\\.$#',
-	'identifier' => 'arguments.count',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
@@ -476,12 +410,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-theme-install-list-table.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method get_error_message\\(\\) on array\\|object\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-theme-install-list-table.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Comparison operation "\\<\\=" between \\(array\\|float\\|int\\) and 0 results in an error\\.$#',
 	'identifier' => 'smallerOrEqual.invalid',
 	'count' => 1,
@@ -494,28 +422,16 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/dashboard.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$_wp_attachment_image_alt on array\\|WP_Post\\.$#',
-	'identifier' => 'property.nonObject',
+	'message' => '#^Access to an undefined property WP_Post\\:\\:\\$_wp_attachment_image_alt\\.$#',
+	'identifier' => 'property.notFound',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/image.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$menu_order on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
+	'message' => '#^PHPDoc tag @var with type array\\<class\\-string\\<WP_List_Table\\>\\> is not subtype of native type array\\{WP_Posts_List_Table\\: \'posts\', WP_Media_List_Table\\: \'media\', WP_Terms_List_Table\\: \'terms\', WP_Users_List_Table\\: \'users\', WP_Comments_List_Table\\: \'comments\', WP_Post_Comments_List_Table\\: array\\{\'comments\', \'post\\-comments\'\\}, WP_Links_List_Table\\: \'links\', WP_Plugin_Install_List_Table\\: \'plugin\\-install\', \\.\\.\\.\\}\\.$#',
+	'identifier' => 'varTag.nativeType',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$post_content on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$post_title on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/list-table.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Comparison operation "\\>" between 1 and array\\<int\\|WP_Comment\\>\\|int results in an error\\.$#',
@@ -524,26 +440,14 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/meta-boxes.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method WP_List_Table\\:\\:display\\(\\) invoked with 1 parameter, 0 required\\.$#',
-	'identifier' => 'arguments.count',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/meta-boxes.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Access to an undefined property WP_Post\\:\\:\\$privacy_policy_page\\.$#',
+	'message' => '#^Access to an undefined property WP_Post\\:\\:\\$front_or_home\\.$#',
 	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$front_or_home on array\\|WP_Post\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method get_error_message\\(\\) on array\\<int\\|WP_Post\\>\\.$#',
-	'identifier' => 'method.nonObject',
+	'message' => '#^Access to an undefined property WP_Post\\:\\:\\$privacy_policy_page\\.$#',
+	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
 ];
@@ -746,12 +650,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/press-this.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/profile.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$download_link on array\\|object\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 2,
@@ -770,28 +668,28 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/update.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/upgrade.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$comment_shortcuts on WP_User\\|false\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/user-edit.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-cron.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Access to an undefined property WP_Post_Type\\:\\:\\$capabilities\\.$#',
 	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/capabilities.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Cannot access property \\$id on int\\|string\\|WP_Term\\.$#',
+	'identifier' => 'property.nonObject',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/category-template.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Cannot access property \\$link on int\\|string\\|WP_Term\\.$#',
+	'identifier' => 'property.nonObject',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/category-template.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Default value of the parameter \\#1 \\$post_id \\(false\\) of function get_the_category\\(\\) is incompatible with type int\\.$#',
@@ -938,12 +836,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-navigation-fallback.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method get_error_code\\(\\) on object\\|false\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-oembed.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$ID on array\\|object\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
@@ -956,8 +848,8 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$object_id on array\\|WP_Error\\|WP_Term\\.$#',
-	'identifier' => 'property.nonObject',
+	'message' => '#^Access to an undefined property WP_Error\\|WP_Term\\:\\:\\$object_id\\.$#',
+	'identifier' => 'property.notFound',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-term-query.php',
 ];
@@ -1058,6 +950,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-user.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to an undefined method WP_Term\\:\\:get_error_message\\(\\)\\.$#',
+	'identifier' => 'method.notFound',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-xmlrpc-server.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Default value of the parameter \\#1 \\$zero \\(false\\) of function get_comments_number_text\\(\\) is incompatible with type string\\.$#',
 	'identifier' => 'parameter.defaultValue',
 	'count' => 1,
@@ -1126,7 +1024,7 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Access to an undefined property WP_Post\\:\\:\\$url\\.$#',
 	'identifier' => 'property.notFound',
-	'count' => 5,
+	'count' => 4,
 	'path' => __DIR__ . '/../../../src/wp-includes/customize/class-wp-customize-nav-menu-item-setting.php',
 ];
 $ignoreErrors[] = [
@@ -1178,18 +1076,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/functions.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/kses.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$link_id on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 3,
-	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Default value of the parameter \\#1 \\$post \\(false\\) of function _get_page_link\\(\\) is incompatible with type int\\|WP_Post\\.$#',
 	'identifier' => 'parameter.defaultValue',
 	'count' => 1,
@@ -1220,18 +1106,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/option.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$ID on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot call method has_param\\(\\) on array\\.$#',
 	'identifier' => 'method.nonObject',
 	'count' => 1,
@@ -1240,12 +1114,6 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$plugins on array\\|object\\.$#',
 	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method add_data\\(\\) on array\\|object\\.$#',
-	'identifier' => 'method.nonObject',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-block-directory-controller.php',
 ];
@@ -1286,57 +1154,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Cannot call method add_data\\(\\) on array\\|object\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot call method get_error_message\\(\\) on array\\|object\\.$#',
-	'identifier' => 'method.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$post_content on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/revision.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$post_excerpt on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/revision.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$post_title on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/revision.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Cannot access property \\$object_id on array\\|int\\|string\\|WP_Term\\.$#',
 	'identifier' => 'property.nonObject',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$parent on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$template_name on array\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Cannot access property \\$term_id on array\\|object\\.$#',
-	'identifier' => 'property.nonObject',
-	'count' => 4,
 	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
 ];
 $ignoreErrors[] = [
@@ -1350,12 +1170,6 @@ $ignoreErrors[] = [
 	'identifier' => 'return.missing',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^PHPDoc tag @var does not specify variable name\\.$#',
-	'identifier' => 'varTag.noVariable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/xmlrpc.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];
