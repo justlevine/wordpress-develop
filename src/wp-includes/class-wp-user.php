@@ -123,7 +123,7 @@ class WP_User {
 	 * @param string                      $name    Optional. User's username
 	 * @param int                         $site_id Optional Site ID, defaults to current site.
 	 */
-	public function __construct( $id = 0, $name = '', $site_id = '' ) {
+	public function __construct( $id = 0, $name = '', $site_id = 0 ) {
 		global $wpdb;
 
 		if ( ! isset( self::$back_compat_keys ) ) {
