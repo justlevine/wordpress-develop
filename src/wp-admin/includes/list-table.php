@@ -14,11 +14,14 @@
  *
  * @global string $hook_suffix
  *
- * @param string $class_name The type of the list table, which is the class name.
- * @param array  $args       Optional. Arguments to pass to the class. Accepts 'screen'.
- * @return WP_List_Table|false List table object on success, false if the class does not exist.
+ * @template T of WP_List_Table
+ *
+ * @param class-string<T>     $class_name The type of the list table, which is the class name.
+ * @param array $args       Optional. Arguments to pass to the class. Accepts 'screen'.
+ * @return T|false List table object on success, false if the class does not exist.
  */
 function _get_list_table( $class_name, $args = array() ) {
+	/** @var class-string<WP_List_Table>[] */
 	$core_classes = array(
 		// Site Admin.
 		'WP_Posts_List_Table'                         => 'posts',
@@ -62,7 +65,7 @@ function _get_list_table( $class_name, $args = array() ) {
 		 *
 		 * @since 6.1.0
 		 *
-		 * @param string $class_name The list table class to use.
+		 * @param class-string<WP_List_Table> $class_name The list table class to use.
 		 * @param array  $args       An array containing _get_list_table() arguments.
 		 */
 		$custom_class_name = apply_filters( 'wp_list_table_class_name', $class_name, $args );
