@@ -10,7 +10,7 @@
  * We are upgrading WordPress.
  *
  * @since 1.5.1
- * @var bool
+ * @const bool
  */
 define( 'WP_INSTALLING', true );
 
