@@ -19,7 +19,8 @@
  *                               correspond to an stdClass object, an associative array, or a numeric array,
  *                               respectively. Default OBJECT.
  * @param string       $filter   Optional. How to sanitize bookmark fields. Default 'raw'.
- * @return array|object|null Type returned depends on $output value.
+ *
+ * @return ($output is 'OBJECT' ? object : array)|null Bookmark data.
  */
 function get_bookmark( $bookmark, $output = OBJECT, $filter = 'raw' ) {
 	global $wpdb;

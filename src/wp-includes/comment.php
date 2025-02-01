@@ -196,7 +196,8 @@ function get_approved_comments( $post_id, $args = array() ) {
  * @param string                $output  Optional. The required return type. One of OBJECT, ARRAY_A, or ARRAY_N, which
  *                                       correspond to a WP_Comment object, an associative array, or a numeric array,
  *                                       respectively. Default OBJECT.
- * @return WP_Comment|array|null Depends on $output value.
+ *
+ * @return ($output is 'OBJECT' ? WP_Comment : array)|null Comment data.
  */
 function get_comment( $comment = null, $output = OBJECT ) {
 	if ( empty( $comment ) && isset( $GLOBALS['comment'] ) ) {
