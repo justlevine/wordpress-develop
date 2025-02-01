@@ -21,7 +21,7 @@
  * @return T|false List table object on success, false if the class does not exist.
  */
 function _get_list_table( $class_name, $args = array() ) {
-	/** @var class-string<WP_List_Table>[] */
+	/** @var array<class-string<WP_List_Table>, mixed> */
 	$core_classes = array(
 		// Site Admin.
 		'WP_Posts_List_Table'                         => 'posts',
