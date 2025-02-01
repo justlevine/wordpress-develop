@@ -2861,13 +2861,13 @@ function is_sticky( $post_id = 0 ) {
  * @since 2.3.0
  *
  * @see sanitize_post_field()
- *
- * @param object|WP_Post|array $post    The post object or array
- * @param string               $context Optional. How to sanitize post fields.
- *                                      Accepts 'raw', 'edit', 'db', 'display',
- *                                      'attribute', or 'js'. Default 'display'.
- * @return object|WP_Post|array The now sanitized post object or array (will be the
- *                              same type as `$post`).
+ * 
+ * @template T of object|WP_Post|array
+ * @param T      $post    The post object or array
+ * @param string $context Optional. How to sanitize post fields.
+ *                        Accepts 'raw', 'edit', 'db', 'display',
+ *                        'attribute', or 'js'. Default 'display'.
+ * @return T     The now sanitized post object or array (will be the same type as `$post`).
  */
 function sanitize_post( $post, $context = 'display' ) {
 	if ( is_object( $post ) ) {
