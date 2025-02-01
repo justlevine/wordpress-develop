@@ -1355,7 +1355,7 @@ class WP_REST_Server {
 	 *
 	 * @since 4.4.0
 	 *
-	 * @param array $request {
+	 * @param WP_REST_Request $request {
 	 *     Request.
 	 *
 	 *     @type string $context Context.
