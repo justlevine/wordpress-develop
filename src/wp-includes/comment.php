@@ -184,6 +184,8 @@ function check_comment( $author, $email, $url, $comment, $user_ip, $user_agent, 
  * }
  * @return WP_Comment[]|int[]|int The approved comments, or number of comments if `$count`
  *                                argument is true.
+ *
+ * @phpstan-return ($args is array{count: true}&array ? int : ($args is array{fields: 'ids'}&array ?  array<int, int> : array<int, \WP_Comment>))
  */
 function get_approved_comments( $post_id, $args = array() ) {
 	if ( ! $post_id ) {
@@ -216,7 +218,11 @@ function get_approved_comments( $post_id, $args = array() ) {
  * @param string                $output  Optional. The required return type. One of OBJECT, ARRAY_A, or ARRAY_N, which
  *                                       correspond to a WP_Comment object, an associative array, or a numeric array,
  *                                       respectively. Default OBJECT.
+ *
  * @return WP_Comment|array|null Depends on $output value.
+ *
+ * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
+ * @phpstan-return ($comment is \WP_Comment ? array<array-key, mixed>|\WP_Comment : array<array-key, mixed>|\WP_Comment|null) & ($output is 'ARRAY_A' ? array<string, mixed>|null : ($output is 'ARRAY_N' ? array<int, mixed>|null : \WP_Comment|null))
  */
 function get_comment( $comment = null, $output = OBJECT ) {
 	if ( empty( $comment ) && isset( $GLOBALS['comment'] ) ) {
@@ -2475,6 +2481,8 @@ function wp_new_comment_notify_postauthor( $comment_id ) {
  * @param string         $comment_status New comment status, either 'hold', 'approve', 'spam', or 'trash'.
  * @param bool           $wp_error       Whether to return a WP_Error object if there is a failure. Default false.
  * @return bool|WP_Error True on success, false or WP_Error on failure.
+ *
+ * @phpstan-return ($wp_error is false ? bool : true|\WP_Error)
  */
 function wp_set_comment_status( $comment_id, $comment_status, $wp_error = false ) {
 	global $wpdb;
@@ -2549,6 +2557,8 @@ function wp_set_comment_status( $comment_id, $comment_status, $wp_error = false 
  * @param bool  $wp_error   Optional. Whether to return a WP_Error on failure. Default false.
  * @return int|false|WP_Error The value 1 if the comment was updated, 0 if not updated.
  *                            False or a WP_Error object on failure.
+ *
+ * @phpstan-return ($wp_error is false ? 0|1|false : 0|1|\WP_Error)
  */
 function wp_update_comment( $commentarr, $wp_error = false ) {
 	global $wpdb;

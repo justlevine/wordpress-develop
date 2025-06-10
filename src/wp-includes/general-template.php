@@ -380,6 +380,8 @@ function get_search_form( $args = array() ) {
  * @param string $redirect Optional path to redirect to on login/logout.
  * @param bool   $display  Default to echo and not return the link.
  * @return void|string Void if `$display` argument is true, log in/out link if `$display` is false.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function wp_loginout( $redirect = '', $display = true ) {
 	if ( ! is_user_logged_in() ) {
@@ -697,6 +699,8 @@ function wp_lostpassword_url( $redirect = '' ) {
  * @param bool   $display Default to echo and not return the link.
  * @return void|string Void if `$display` argument is true, registration or admin link
  *                     if `$display` is false.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function wp_register( $before = '<li>', $after = '</li>', $display = true ) {
 	if ( ! is_user_logged_in() ) {
@@ -1335,6 +1339,8 @@ function _wp_render_title_tag() {
  * @param bool   $display     Optional. Whether to display or retrieve title. Default true.
  * @param string $seplocation Optional. Location of the separator (either 'left' or 'right').
  * @return string|void String when `$display` is false, nothing otherwise.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function wp_title( $sep = '&raquo;', $display = true, $seplocation = '' ) {
 	global $wp_locale;
@@ -1480,6 +1486,8 @@ function wp_title( $sep = '&raquo;', $display = true, $seplocation = '' ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function single_post_title( $prefix = '', $display = true ) {
 	$_post = get_queried_object();
@@ -1515,6 +1523,8 @@ function single_post_title( $prefix = '', $display = true ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving, null when displaying or failure.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function post_type_archive_title( $prefix = '', $display = true ) {
 	if ( ! is_post_type_archive() ) {
@@ -1557,6 +1567,8 @@ function post_type_archive_title( $prefix = '', $display = true ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function single_cat_title( $prefix = '', $display = true ) {
 	return single_term_title( $prefix, $display );
@@ -1574,6 +1586,8 @@ function single_cat_title( $prefix = '', $display = true ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function single_tag_title( $prefix = '', $display = true ) {
 	return single_term_title( $prefix, $display );
@@ -1591,6 +1605,8 @@ function single_tag_title( $prefix = '', $display = true ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function single_term_title( $prefix = '', $display = true ) {
 	$term = get_queried_object();
@@ -1656,6 +1672,8 @@ function single_term_title( $prefix = '', $display = true ) {
  * @param string $prefix  Optional. What to display before the title.
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|false|void False if there's no valid title for the month. Title when retrieving.
+ *
+ * @phpstan-return ($display is true ? false|void : false|string)
  */
 function single_month_title( $prefix = '', $display = true ) {
 	global $wp_locale;
@@ -1992,6 +2010,8 @@ function get_archives_link( $url, $text, $format = 'html', $before = '', $after 
  *     @type string     $w               Week. Default current week.
  * }
  * @return void|string Void if 'echo' argument is true, archive links if 'echo' is false.
+ *
+ * @phpstan-return ($args is array{echo: false|0}&array ? string|void : void)
  */
 function wp_get_archives( $args = '' ) {
 	global $wpdb, $wp_locale;
@@ -2251,6 +2271,8 @@ function calendar_week_mod( $num ) {
  *     @type string $post_type Optional. Post type. Default 'post'.
  * }
  * @return void|string Void if `$display` argument is true, calendar HTML if `$display` is false.
+ *
+ * @phpstan-return ($args is array{display: false}&array ? string : void)
  */
 function get_calendar( $args = array() ) {
 	global $wpdb, $m, $monthnum, $year, $wp_locale, $posts;
@@ -2665,6 +2687,8 @@ function the_date_xml() {
  * @param string $after   Optional. Output after the date. Default empty.
  * @param bool   $display Optional. Whether to echo the date or return it. Default true.
  * @return string|void String if retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function the_date( $format = '', $before = '', $after = '', $display = true ) {
 	global $currentday, $previousday;
@@ -2740,6 +2764,8 @@ function get_the_date( $format = '', $post = null ) {
  * @param string $after   Optional. Output after the date. Default empty.
  * @param bool   $display Optional. Whether to echo the date or return it. Default true.
  * @return string|void String if retrieving.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function the_modified_date( $format = '', $before = '', $after = '', $display = true ) {
 	$the_modified_date = $before . get_the_modified_date( $format ) . $after;
@@ -4632,6 +4658,8 @@ function language_attributes( $doctype = 'html' ) {
  * }
  * @return string|string[]|void String of page links or array of page links, depending on 'type' argument.
  *                              Void if total number of pages is less than 2.
+ *
+ * @phpstan-return ($args is array{total: int<min, 1>}&array ? void : ($args is array{type: 'array'}&array ? list<string> : string))
  */
 function paginate_links( $args = '' ) {
 	global $wp_query, $wp_rewrite;

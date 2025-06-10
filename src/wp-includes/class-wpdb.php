@@ -1460,6 +1460,8 @@ class wpdb {
 	 * @param mixed       ...$args Further variables to substitute into the query's placeholders
 	 *                             if being called with individual arguments.
 	 * @return string|void Sanitized query string, if there is a query to prepare.
+	 *
+	 * @phpstan-param literal-string $query
 	 */
 	public function prepare( $query, ...$args ) {
 		if ( is_null( $query ) ) {
@@ -3063,6 +3065,10 @@ class wpdb {
 	 *                            respectively. Default OBJECT.
 	 * @param int         $y      Optional. Row to return. Indexed from 0. Default 0.
 	 * @return array|object|null|void Database query result in format specified by $output or null on failure.
+	 *
+	 * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
+	 * @phpstan-param int<0, max> $y
+	 * @phpstan-return null|void|($output is 'ARRAY_A' ? array<array-key, mixed> : ($output is 'ARRAY_N' ? list<mixed> : \stdClass))
 	 */
 	public function get_row( $query = null, $output = OBJECT, $y = 0 ) {
 		$this->func_call = "\$db->get_row(\"$query\",$output,$y)";
@@ -3144,6 +3150,9 @@ class wpdb {
 	 *                       of each row's first column's value. Duplicate keys are discarded.
 	 *                       Default OBJECT.
 	 * @return array|object|null Database query results.
+	 *
+	 * @phpstan-param 'OBJECT'|'OBJECT_K'|'ARRAY_A'|'ARRAY_N' $output
+	 * @phpstan-return null|($output is 'ARRAY_A' ? list<array<array-key, mixed>> : ($output is 'ARRAY_N' ? list<array<int, mixed>> : ($output is 'OBJECT_K' ? array<array-key, \stdClass> : list<\stdClass>)))
 	 */
 	public function get_results( $query = null, $output = OBJECT ) {
 		$this->func_call = "\$db->get_results(\"$query\", $output)";

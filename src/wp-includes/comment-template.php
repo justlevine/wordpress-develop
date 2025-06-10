@@ -489,6 +489,8 @@ function comment_author_url_link( $link_text = '', $before = '', $after = '', $c
  * @param bool            $display   Optional. Whether to print or return the output.
  *                                   Default true.
  * @return void|string Void if `$display` argument is true, comment classes if `$display` is false.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function comment_class( $css_class = '', $comment = null, $post = null, $display = true ) {
 	// Separates classes with a single space, collates classes for comment DIV.

@@ -359,7 +359,9 @@ class WP_Comment_Query {
 	 * @since 4.2.0 Moved parsing to WP_Comment_Query::parse_query().
 	 *
 	 * @param string|array $query Array or URL query string of parameters.
-	 * @return array|int List of comments, or number of comments when 'count' is passed as a query var.
+	 * @return WP_Comment[]|int[]|int List of comments, or number of comments when 'count' is passed as a query var.
+	 *
+	 * @phpstan-return ( $query is array{count:true}&array ? int : WP_Comment[]|int[] )
 	 */
 	public function query( $query ) {
 		$this->query_vars = wp_parse_args( $query );

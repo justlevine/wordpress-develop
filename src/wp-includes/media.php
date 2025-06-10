@@ -4022,6 +4022,8 @@ function adjacent_image_link( $prev = true, $size = 'thumbnail', $text = false )
  *                                     or 'objects' to return an array of taxonomy objects.
  *                                     Default is 'names'.
  * @return string[]|WP_Taxonomy[] List of taxonomies or taxonomy names. Empty array on failure.
+ *
+ * @phpstan-return ($output is 'names' ? array<int, string> : array<string, \WP_Taxonomy>)
  */
 function get_attachment_taxonomies( $attachment, $output = 'names' ) {
 	if ( is_int( $attachment ) ) {
@@ -4084,6 +4086,8 @@ function get_attachment_taxonomies( $attachment, $output = 'names' ) {
  * @param string $output Optional. The type of taxonomy output to return. Accepts 'names' or 'objects'.
  *                       Default 'names'.
  * @return string[]|WP_Taxonomy[] Array of names or objects of registered taxonomies for attachments.
+ *
+ * @phpstan-return ($output is 'names' ? array<int, string> : array<string, \WP_Taxonomy>)
  */
 function get_taxonomies_for_attachments( $output = 'names' ) {
 	$taxonomies = array();

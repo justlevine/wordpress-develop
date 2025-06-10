@@ -123,7 +123,10 @@ require_once ABSPATH . 'wp-admin/admin-footer.php';
 
 return;
 
-// These are strings returned by the API that we want to be translatable.
+/**
+ * These are strings returned by the API that we want to be translatable.
+ * @phpstan-ignore deadCode.unreachable
+ */
 __( 'Project Leaders' );
 /* translators: %s: The current WordPress version number. */
 __( 'Core Contributors to WordPress %s' );

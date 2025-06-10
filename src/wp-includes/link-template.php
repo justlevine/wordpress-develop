@@ -153,6 +153,8 @@ function wp_force_plain_post_permalink( $post = null, $sample = null ) {
  * @param int|WP_Post $post      Optional. Post ID or post object. Default is the global `$post`.
  * @param bool        $leavename Optional. Whether to keep post name or page name. Default false.
  * @return string|false The permalink URL. False if the post does not exist.
+ *
+ * @phpstan-return ($post is \WP_Post ? string : string|false)
  */
 function get_the_permalink( $post = 0, $leavename = false ) {
 	return get_permalink( $post, $leavename );
@@ -166,6 +168,8 @@ function get_the_permalink( $post = 0, $leavename = false ) {
  * @param int|WP_Post $post      Optional. Post ID or post object. Default is the global `$post`.
  * @param bool        $leavename Optional. Whether to keep post name or page name. Default false.
  * @return string|false The permalink URL. False if the post does not exist.
+ *
+ * @phpstan-return ($post is \WP_Post ? string : string|false)
  */
 function get_permalink( $post = 0, $leavename = false ) {
 	$rewritecode = array(
@@ -320,6 +324,8 @@ function get_permalink( $post = 0, $leavename = false ) {
  * @param bool        $leavename Optional. Whether to keep post name. Default false.
  * @param bool        $sample    Optional. Is it a sample permalink. Default false.
  * @return string|false The post permalink URL. False if the post does not exist.
+ *
+ * @phpstan-return ($post is \WP_Post ? string : string|false)
  */
 function get_post_permalink( $post = 0, $leavename = false, $sample = false ) {
 	global $wp_rewrite;
@@ -1132,6 +1138,8 @@ function get_edit_term_link( $term, $taxonomy = '', $object_type = '' ) {
  * @param int|WP_Term|null $term    Optional. Term ID or object. If null, the queried object will be inspected. Default null.
  * @param bool             $display Optional. Whether or not to echo the return. Default true.
  * @return string|void HTML content.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function edit_term_link( $link = '', $before = '', $after = '', $term = null, $display = true ) {
 	if ( is_null( $term ) ) {
@@ -2536,6 +2544,8 @@ function get_next_posts_page_link( $max_page = 0 ) {
  * @param int  $max_page Optional. Max pages. Default 0.
  * @param bool $display  Optional. Whether to echo the link. Default true.
  * @return string|void The link URL for next posts page if `$display = false`.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function next_posts( $max_page = 0, $display = true ) {
 	$link   = get_next_posts_page_link( $max_page );
@@ -2642,6 +2652,8 @@ function get_previous_posts_page_link() {
  *
  * @param bool $display Optional. Whether to echo the link. Default true.
  * @return string|void The previous posts page link if `$display = false`.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function previous_posts( $display = true ) {
 	$output = esc_url( get_previous_posts_page_link() );

@@ -39,6 +39,8 @@ function get_the_ID() { // phpcs:ignore WordPress.NamingConventions.ValidFunctio
  * @param bool   $display Optional. Whether to echo or return the title. Default true for echo.
  * @return void|string Void if `$display` argument is true or the title is empty,
  *                     current post title if `$display` is false.
+ *
+ * @phpstan-return ($display is true ? void : string|void)
  */
 function the_title( $before = '', $after = '', $display = true ) {
 	$title = get_the_title();
@@ -1296,6 +1298,8 @@ function wp_dropdown_pages( $args = '' ) {
  *                                      Walker_Page instance being used.
  * }
  * @return void|string Void if 'echo' argument is true, HTML list of pages if 'echo' is false.
+ *
+ * @phpstan-return ($args is array{echo: false}&array ? string : void)
  */
 function wp_list_pages( $args = '' ) {
 	$defaults = array(
