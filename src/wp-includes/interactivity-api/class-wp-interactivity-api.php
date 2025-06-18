@@ -204,12 +204,11 @@ final class WP_Interactivity_API {
 		if ( ! isset( $this->config_data[ $store_namespace ] ) ) {
 			$this->config_data[ $store_namespace ] = array();
 		}
-		if ( is_array( $config ) ) {
-			$this->config_data[ $store_namespace ] = array_replace_recursive(
-				$this->config_data[ $store_namespace ],
-				$config
-			);
-		}
+
+		$this->config_data[ $store_namespace ] = array_replace_recursive(
+			$this->config_data[ $store_namespace ],
+			$config
+		);
 		return $this->config_data[ $store_namespace ];
 	}
 
