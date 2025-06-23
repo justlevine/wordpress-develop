@@ -10,6 +10,7 @@ class Tests_Formatting_antispambot extends WP_UnitTestCase {
 		$data = array(
 			'bob@example.com',
 			'phil@example.info',
+			'phil@example.TLD',
 			'ace@204.32.222.14',
 			'kevin@many.subdomains.make.a.happy.man.edu',
 			'a@b.co',

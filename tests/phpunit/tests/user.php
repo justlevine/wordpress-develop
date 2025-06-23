@@ -855,6 +855,8 @@ class Tests_User extends WP_UnitTestCase {
 	 * Since validate_username() uses strict sanitization, this
 	 * test checks some codepoints strictly, rejecting some that
 	 * are less readable than confusable.
+	 *
+	 * @ticket 31992
 	 */
 	public function test_validate_utf8_usernames() {
 		if ( ! function_exists( 'mb_str_split' ) ) {
