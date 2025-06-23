@@ -2128,8 +2128,13 @@ function sanitize_file_name( $filename ) {
  * the first block for that script, and then checks that the string
  * uses only a single block. This works for the scripts currently in
  * Unicode, and will work for future scripts as long as the committee
- * keeps estimating correctly, so there's only one block for each
+ * keeps estimating high enough, so there's only one block for each
  * future script.
+ *
+ * @since 6.9.0
+ *
+ * @param $input A string to check
+ * @return true if all letters in the string belong to the same unicode script, and false if letters fromm two more more scripts are included.
  */
 
 function uses_single_unicode_script( $input ) {

@@ -38,6 +38,10 @@ class Tests_Formatting_SanitizeUser extends WP_UnitTestCase {
 	}
 
 	/*
+	 * Some languages use the Latin alphabet with various accents.
+	 * The city Münster is in Germany, Orléans is in France. This
+	 * test checks that an author (a user name) can use an accent.
+	 *
 	 * @ticket 31992
 	 */
 
@@ -65,6 +69,13 @@ class Tests_Formatting_SanitizeUser extends WP_UnitTestCase {
 	}
 
 	/*
+	 * Some languages use the Latin alphabet with various
+	 * extra letters. The city Bodø is in Norway, Gießen in
+	 * Germany. This test checks that an author (a user name) can
+	 * use such an extended Latin letter. (The letter used, ɔ, is
+	 * like the o in top, and used in various countries in West
+	 * Africa.)
+	 *
 	 * @ticket 31992
 	 */
 
@@ -80,6 +91,13 @@ class Tests_Formatting_SanitizeUser extends WP_UnitTestCase {
 	}
 
 	/*
+	 * Some people are worried about using letters that look alike
+	 * from different alphabets, for example the Cyrillic V looks
+	 * exactly like the Latin B. If any user names use confusable
+	 * letters like that pair, people are sure to have trouble
+	 * logging in, so we try to prevent people from painting
+	 * themselves into that corner.
+	 *
 	 * @ticket 31992
 	 */
 
