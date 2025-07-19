@@ -685,10 +685,8 @@ class WP_Comment_Query {
 
 						break;
 					}
-				}
 
-				// Default to DESC.
-				if ( ! $comment_id_order ) {
+					// Default to DESC.
 					$comment_id_order = 'DESC';
 				}
 

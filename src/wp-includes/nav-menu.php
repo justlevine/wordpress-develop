@@ -377,7 +377,7 @@ function wp_update_nav_menu_object( $menu_id = 0, $menu_data = array() ) {
 		return (int) $_menu['term_id'];
 	}
 
-	if ( ! $_menu || ! isset( $_menu->term_id ) ) {
+	if ( ! isset( $_menu->term_id ) ) {
 		return 0;
 	}
 
