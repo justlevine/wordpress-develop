@@ -600,9 +600,9 @@ function wp_validate_site_data( $errors, $data, $old_site = null ) {
 
 		// Allow '0000-00-00 00:00:00', although it be stripped out at this point.
 		if ( '0000-00-00 00:00:00' !== $data[ $date_field ] ) {
-			$month      = substr( $data[ $date_field ], 5, 2 );
-			$day        = substr( $data[ $date_field ], 8, 2 );
-			$year       = substr( $data[ $date_field ], 0, 4 );
+			$month      = (int) substr( $data[ $date_field ], 5, 2 );
+			$day        = (int) substr( $data[ $date_field ], 8, 2 );
+			$year       = (int) substr( $data[ $date_field ], 0, 4 );
 			$valid_date = wp_checkdate( $month, $day, $year, $data[ $date_field ] );
 			if ( ! $valid_date ) {
 				$errors->add( 'site_invalid_' . $date_field, __( 'Both registration and last updated dates must be valid dates.' ) );
@@ -1128,7 +1128,7 @@ function update_site_meta( $site_id, $meta_key, $meta_value, $prev_value = '' ) 
  * @return bool Whether the site meta key was deleted from the database.
  */
 function delete_site_meta_by_key( $meta_key ) {
-	return delete_metadata( 'blog', null, $meta_key, '', true );
+	return delete_metadata( 'blog', 0, $meta_key, '', true );
 }
 
 /**
