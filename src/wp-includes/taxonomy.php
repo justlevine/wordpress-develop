@@ -2652,7 +2652,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
 
 	// Seems unreachable. However, is used in the case that a term name is provided, which sanitizes to an empty string.
 	if ( empty( $slug ) ) {
-		$slug = sanitize_title( $slug, $term_id );
+		$slug = sanitize_title( $slug, (string) $term_id );
 
 		/** This action is documented in wp-includes/taxonomy.php */
 		do_action( 'edit_terms', $term_id, $taxonomy );
@@ -3425,7 +3425,7 @@ function wp_update_term( $term_id, $taxonomy, $args = array() ) {
 	$wpdb->update( $wpdb->terms, $data, compact( 'term_id' ) );
 
 	if ( empty( $slug ) ) {
-		$slug = sanitize_title( $name, $term_id );
+		$slug = sanitize_title( $name, (string) $term_id );
 		$wpdb->update( $wpdb->terms, compact( 'slug' ), compact( 'term_id' ) );
 	}
 
@@ -3572,7 +3572,7 @@ function wp_defer_term_counting( $defer = null ) {
 		$_defer = $defer;
 		// Flush any deferred counts.
 		if ( ! $defer ) {
-			wp_update_term_count( null, null, true );
+			wp_update_term_count( 0, '', true );
 		}
 	}
 
