@@ -122,7 +122,7 @@ function get_categories( $args = '' ) {
 function get_category( $category, $output = OBJECT, $filter = 'raw' ) {
 	$category = get_term( $category, 'category', $output, $filter );
 
-	if ( is_wp_error( $category ) ) {
+	if ( null === $category || is_wp_error( $category ) ) {
 		return $category;
 	}
 
@@ -183,7 +183,7 @@ function get_category_by_path( $category_path, $full_match = true, $output = OBJ
 	);
 
 	if ( empty( $categories ) ) {
-		return;
+		return null;
 	}
 
 	foreach ( $categories as $category ) {
