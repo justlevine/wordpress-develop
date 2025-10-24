@@ -866,8 +866,8 @@ class WP_Test_REST_Comments_Controller extends WP_Test_REST_Controller_Testcase 
 		$request  = new WP_REST_Request( $method, '/wp/v2/comments' );
 		$response = rest_get_server()->dispatch( $request );
 		$headers  = $response->get_headers();
-		$this->assertSame( $total_comments, $headers['X-WP-Total'] );
-		$this->assertSame( $total_pages, $headers['X-WP-TotalPages'] );
+		$this->assertSame( (string) $total_comments, $headers['X-WP-Total'] );
+		$this->assertSame( (string) $total_pages, $headers['X-WP-TotalPages'] );
 		$next_link = add_query_arg(
 			array(
 				'page' => 2,
@@ -889,8 +889,8 @@ class WP_Test_REST_Comments_Controller extends WP_Test_REST_Controller_Testcase 
 		$request->set_param( 'page', 3 );
 		$response = rest_get_server()->dispatch( $request );
 		$headers  = $response->get_headers();
-		$this->assertSame( $total_comments, $headers['X-WP-Total'] );
-		$this->assertSame( $total_pages, $headers['X-WP-TotalPages'] );
+		$this->assertSame( (string) $total_comments, $headers['X-WP-Total'] );
+		$this->assertSame( (string) $total_pages, $headers['X-WP-TotalPages'] );
 		$prev_link = add_query_arg(
 			array(
 				'page' => 2,
@@ -911,8 +911,8 @@ class WP_Test_REST_Comments_Controller extends WP_Test_REST_Controller_Testcase 
 		$request->set_param( 'page', $total_pages );
 		$response = rest_get_server()->dispatch( $request );
 		$headers  = $response->get_headers();
-		$this->assertSame( $total_comments, $headers['X-WP-Total'] );
-		$this->assertSame( $total_pages, $headers['X-WP-TotalPages'] );
+		$this->assertSame( (string) $total_comments, $headers['X-WP-Total'] );
+		$this->assertSame( (string) $total_pages, $headers['X-WP-TotalPages'] );
 		$prev_link = add_query_arg(
 			array(
 				'page' => $total_pages - 1,
@@ -927,8 +927,8 @@ class WP_Test_REST_Comments_Controller extends WP_Test_REST_Controller_Testcase 
 		$request->set_param( 'page', 100 );
 		$response = rest_get_server()->dispatch( $request );
 		$headers  = $response->get_headers();
-		$this->assertSame( $total_comments, $headers['X-WP-Total'] );
-		$this->assertEquals( $total_pages, $headers['X-WP-TotalPages'] );
+		$this->assertSame( (string) $total_comments, $headers['X-WP-Total'] );
+		$this->assertEquals( (string) $total_pages, $headers['X-WP-TotalPages'] );
 		$prev_link = add_query_arg(
 			array(
 				'page' => $total_pages,
