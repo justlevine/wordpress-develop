@@ -242,12 +242,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-block-bindings-registry.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-block-processor.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property WP_Block_Processor\\:\\:\\$last_error \\(string\\|null\\) is never assigned string so it can be removed from the property type\\.$#',
 	'identifier' => 'property.unusedType',
 	'count' => 1,
@@ -426,12 +420,6 @@ $ignoreErrors[] = [
 	'identifier' => 'notIdentical.alwaysTrue',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method WP_Script_Modules\\:\\:get_marked_for_enqueue\\(\\) is unused\\.$#',
-	'identifier' => 'method.unused',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-script-modules.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property _WP_Dependency\\:\\:\\$translations_path \\(string\\) in isset\\(\\) is not nullable\\.$#',
