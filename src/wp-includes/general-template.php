@@ -1487,7 +1487,7 @@ function wp_title( $sep = '&raquo;', $display = true, $seplocation = '' ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
  *
- * @phpstan-return ($display is true ? void : string|void)
+ * @phpstan-return ( $display is true ? void : (string|void) )
  */
 function single_post_title( $prefix = '', $display = true ) {
 	$_post = get_queried_object();
@@ -1524,7 +1524,7 @@ function single_post_title( $prefix = '', $display = true ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving, null when displaying or failure.
  *
- * @phpstan-return ($display is true ? void : string|void)
+ * @phpstan-return ( $display is true ? void : (string|void) )
  */
 function post_type_archive_title( $prefix = '', $display = true ) {
 	if ( ! is_post_type_archive() ) {
@@ -1568,10 +1568,10 @@ function post_type_archive_title( $prefix = '', $display = true ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
  *
- * @phpstan-return ($display is true ? void : string|void)
+ * @phpstan-return ( $display is true ? void : (string|void) )
  */
 function single_cat_title( $prefix = '', $display = true ) {
-	return single_term_title( $prefix, $display );
+	return single_term_title( $prefix, false );
 }
 
 /**
@@ -1587,7 +1587,7 @@ function single_cat_title( $prefix = '', $display = true ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
  *
- * @phpstan-return ($display is true ? void : string|void)
+ * @phpstan-return ( $display is true ? void : (string|void) )
  */
 function single_tag_title( $prefix = '', $display = true ) {
 	return single_term_title( $prefix, $display );
@@ -1606,7 +1606,7 @@ function single_tag_title( $prefix = '', $display = true ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|void Title when retrieving.
  *
- * @phpstan-return ($display is true ? void : string|void)
+ * @phpstan-return ( $display is true ? void : (string|void) )
  */
 function single_term_title( $prefix = '', $display = true ) {
 	$term = get_queried_object();
@@ -1673,7 +1673,7 @@ function single_term_title( $prefix = '', $display = true ) {
  * @param bool   $display Optional. Whether to display or retrieve title. Default true.
  * @return string|false|void False if there's no valid title for the month. Title when retrieving.
  *
- * @phpstan-return ($display is true ? false|void : false|string)
+ * @phpstan-return ( $display is true ? void : string )|false
  */
 function single_month_title( $prefix = '', $display = true ) {
 	global $wp_locale;
@@ -2011,7 +2011,7 @@ function get_archives_link( $url, $text, $format = 'html', $before = '', $after 
  * }
  * @return void|string Void if 'echo' argument is true, archive links if 'echo' is false.
  *
- * @phpstan-return ($args is array{echo: false|0}&array ? string|void : void)
+ * @phpstan-return ( $args is array{echo: false|0}&array ? (string|void) : void )
  */
 function wp_get_archives( $args = '' ) {
 	global $wpdb, $wp_locale;

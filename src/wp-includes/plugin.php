@@ -278,7 +278,7 @@ function apply_filters_ref_array( $hook_name, $args ) {
  *                  anything registered. When checking a specific function, the priority
  *                  of that hook is returned, or false if the function is not attached.
  *
- * @phpstan-return ($callback is false ? bool : false|int)
+ * @phpstan-return ( $callback is false ? bool : (false|int) )
  */
 function has_filter( $hook_name, $callback = false ) {
 	global $wp_filter;
@@ -587,7 +587,7 @@ function do_action_ref_array( $hook_name, $args ) {
  *                  anything registered. When checking a specific function, the priority
  *                  of that hook is returned, or false if the function is not attached.
  *
- * @phpstan-return ($callback is false ? bool : false|int)
+ * @phpstan-return ( $callback is false ? bool : (false|int) )
  */
 function has_action( $hook_name, $callback = false ) {
 	return has_filter( $hook_name, $callback );

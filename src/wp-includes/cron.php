@@ -36,7 +36,7 @@
  * @param bool   $wp_error   Optional. Whether to return a WP_Error on failure. Default false.
  * @return bool|WP_Error True if event successfully scheduled. False or WP_Error on failure.
  *
- * @phpstan-return ($wp_error is false ? bool : true|\WP_Error)
+ * @phpstan-return ( $wp_error is false ? bool : (true|\WP_Error) )
  */
 function wp_schedule_single_event( $timestamp, $hook, $args = array(), $wp_error = false ) {
 	// Make sure timestamp is a positive integer.
@@ -233,7 +233,7 @@ function wp_schedule_single_event( $timestamp, $hook, $args = array(), $wp_error
  * @param bool   $wp_error   Optional. Whether to return a WP_Error on failure. Default false.
  * @return bool|WP_Error True if event successfully scheduled. False or WP_Error on failure.
  *
- * @phpstan-return ($wp_error is false ? bool : true|\WP_Error)
+ * @phpstan-return ( $wp_error is false ? bool : (true|\WP_Error) )
  */
 function wp_schedule_event( $timestamp, $recurrence, $hook, $args = array(), $wp_error = false ) {
 	// Make sure timestamp is a positive integer.
@@ -341,7 +341,7 @@ function wp_schedule_event( $timestamp, $recurrence, $hook, $args = array(), $wp
  * @param bool   $wp_error   Optional. Whether to return a WP_Error on failure. Default false.
  * @return bool|WP_Error True if event successfully rescheduled. False or WP_Error on failure.
  *
- * @phpstan-return ($wp_error is false ? bool : true|\WP_Error)
+ * @phpstan-return ( $wp_error is false ? bool : (true|\WP_Error) )
  */
 function wp_reschedule_event( $timestamp, $recurrence, $hook, $args = array(), $wp_error = false ) {
 	// Make sure timestamp is a positive integer.
@@ -465,7 +465,7 @@ function wp_reschedule_event( $timestamp, $recurrence, $hook, $args = array(), $
  * @param bool   $wp_error  Optional. Whether to return a WP_Error on failure. Default false.
  * @return bool|WP_Error True if event successfully unscheduled. False or WP_Error on failure.
  *
- * @phpstan-return ($wp_error is false ? bool : true|\WP_Error)
+ * @phpstan-return ( $wp_error is false ? bool : (true|\WP_Error) )
  */
 function wp_unschedule_event( $timestamp, $hook, $args = array(), $wp_error = false ) {
 	// Make sure timestamp is a positive integer.
@@ -554,7 +554,7 @@ function wp_unschedule_event( $timestamp, $hook, $args = array(), $wp_error = fa
  *                            events were registered with the hook and arguments combination), false or WP_Error
  *                            if unscheduling one or more events fail.
  *
- * @phpstan-return (int<0, max>|($wp_error is false ? false : \WP_Error))
+ * @phpstan-return int<0, max>|( $wp_error is false ? false : \WP_Error )
  */
 function wp_clear_scheduled_hook( $hook, $args = array(), $wp_error = false ) {
 	/*
@@ -661,7 +661,7 @@ function wp_clear_scheduled_hook( $hook, $args = array(), $wp_error = false ) {
  * @return int|false|WP_Error On success an integer indicating number of events unscheduled (0 indicates no
  *                            events were registered on the hook), false or WP_Error if unscheduling fails.
  *
- * @phpstan-return ($wp_error is false ? int<0, max>|false : int<0, max>|\WP_Error)
+ * @phpstan-return int<0, max>|($wp_error is false ? false : \WP_Error)
  */
 function wp_unschedule_hook( $hook, $wp_error = false ) {
 	/**

@@ -98,7 +98,12 @@ if ( ! function_exists( 'get_user_by' ) ) :
 	 * @param int|string $value A value for $field. A user ID, slug, email address, or login name.
 	 * @return WP_User|false WP_User object on success, false on failure.
 	 *
-	 * @phpstan-return ($field is 'id'|'ID' ? ($value is int<min, 0> ? false : \WP_User|false) : \WP_User|false)
+	 * @phpstan-param 'id'|'ID'|'slug'|'email'|'login' $field
+	 * @phpstan-return (
+	 *   $field is 'id'|'ID' ? (
+	 *     $value is not numeric ? false : (\WP_User|false)
+	 *   ) : ( $value is non-empty-string ? (\WP_User|false) : false )
+	 * )
 	 */
 	function get_user_by( $field, $value ) {
 		$userdata = WP_User::get_data_by( $field, $value );

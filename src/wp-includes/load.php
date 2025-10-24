@@ -860,6 +860,7 @@ function wp_start_object_cache() {
 			if ( file_exists( WP_CONTENT_DIR . '/object-cache.php' ) ) {
 				require_once WP_CONTENT_DIR . '/object-cache.php';
 
+				// @phpstan-ignore if.alwaysFalse
 				if ( function_exists( 'wp_cache_init' ) ) {
 					wp_using_ext_object_cache( true );
 				}
@@ -1467,7 +1468,19 @@ function is_multisite() {
  *
  * @phpstan-template T of int
  * @phpstan-param T|scalar|array|resource|null $maybeint
- * @phpstan-return ($maybeint is T&int<0, max> ? T : ($maybeint is int<min, -1> ? int<1, max> : ($maybeint is empty ? 0 : ($maybeint is numeric-string ? int<0, max> : ($maybeint is string ? 0 : ($maybeint is true|non-empty-array ? 1 : ($maybeint is bool ? 0|1 : int<0, max>)))))))
+ * @phpstan-return (
+ *   $maybeint is T&int<0, max> ? T : (
+ *     $maybeint is int<min, -1> ? int<1, max> : (
+ *       $maybeint is empty ? 0 : (
+ *         $maybeint is numeric-string ? int<0, max> : (
+ *           $maybeint is string ? 0 : (
+ *             $maybeint is (true|non-empty-array) ? 1 : ( $maybeint is bool ? (0|1) : int<0, max> )
+ *           )
+ *         )
+ *       )
+ *     )
+ *   )
+ * )
  */
 function absint( $maybeint ) {
 	return abs( (int) $maybeint );

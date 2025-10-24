@@ -32,7 +32,7 @@ require ABSPATH . WPINC . '/option.php';
  * @return string|int|false Integer if `$format` is 'U' or 'G', string otherwise.
  *                          False on failure.
  *
- * @phpstan-return ($format is 'G'|'U' ? int|false : string|false)
+ * @phpstan-return ( $format is 'G'|'U' ? int : string )|false
  */
 function mysql2date( $format, $date, $translate = true ) {
 	if ( empty( $date ) ) {
@@ -468,7 +468,7 @@ function number_format_i18n( $number, $decimals = 0 ) {
  * @param int        $decimals Optional. Precision of number of decimal places. Default 0.
  * @return string|false Number string on success, false on failure.
  *
- * @phpstan-return ($bytes is not numeric ? false : ($bytes is int<min, -1>|'0' ? false : string))
+ * @phpstan-return ( $bytes is not numeric ? false : ($bytes is int<min, -1>|'0' ? false : string))
  */
 function size_format( $bytes, $decimals = 0 ) {
 	$quant = array(
@@ -6273,7 +6273,11 @@ function iis7_supports_permalinks() {
  * @param string[] $allowed_files Optional. Array of allowed files. Default empty array.
  * @return int 0 means nothing is wrong, greater than 0 means something was wrong.
  *
- * @phpstan-return ($file is '' ? 0 : ($allowed_files is empty ? 0|1|2 : 0|1|2|3))
+ * @phpstan-return (
+ *   $file is '' ? 0 : (
+ *     $allowed_files is empty ? (0|1|2) : (0|1|2|3)
+ *   )
+ * )
  */
 function validate_file( $file, $allowed_files = array() ) {
 	if ( ! is_scalar( $file ) || '' === $file ) {

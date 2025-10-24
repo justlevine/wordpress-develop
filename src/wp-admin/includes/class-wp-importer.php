@@ -135,7 +135,7 @@ class WP_Importer {
 	 *
 	 * @phpstan-param int|string $blog_id
 	 *
-	 * @phpstan-return ( $blog_id is int|numeric-string ? int : int|never )
+	 * @phpstan-return ( $blog_id is (int|numeric-string) ? int : (int|never) )
 	 */
 	public function set_blog( $blog_id ) {
 		if ( is_numeric( $blog_id ) ) {

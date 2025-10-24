@@ -980,7 +980,7 @@ function get_tax_sql( $tax_query, $primary_table, $primary_id_column ) {
  *                                     Null for miscellaneous failure.
  *
  * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
- * @phpstan-return ($output is 'ARRAY_A' ? array<string, string|int>|\WP_Error|null : ($output is 'ARRAY_N' ? list<string|int>|\WP_Error|null : \WP_Term|\WP_Error|null))
+ * @phpstan-return ( $output is 'ARRAY_A' ? array<string,mixed> : ($output is 'ARRAY_N' ? array<int,mixed> : \WP_Term) )|\WP_Error|null
  */
 function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 	if ( empty( $term ) ) {
@@ -1105,7 +1105,11 @@ function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
  * @return WP_Term|array|false WP_Term instance (or array) on success, depending on the `$output` value.
  *                             False if `$taxonomy` does not exist or `$term` was not found.
  *
- * @phpstan-return false|($output is 'ARRAY_A' ? array<string, string|int> : ($output is 'ARRAY_N' ? list<string|int> : \WP_Term))
+ * @phpstan-return (
+ *   $output is 'ARRAY_A' ? array<string,mixed> : (
+ *     $output is 'ARRAY_N' ? array<int,mixed> : \WP_Term
+ *   )
+ * )|false
  */
 function get_term_by( $field, $value, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 
@@ -1326,7 +1330,17 @@ function get_term_to_edit( $id, $taxonomy ) {
  *                                                  or WP_Error if any of the taxonomies do not exist.
  *                                                  See the function description for more information.
  *
- * @phpstan-return ($args is array{fields: 'count'}&array ? numeric-string : ($args is array{fields: 'names'|'slugs'}&array ? list<string> : ($args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : ($args is array{fields: 'id=>parent'}&array ? array<int, int> : ($args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>)))))|\WP_Error
+ * @phpstan-return (
+ *   $args is array{fields: 'count'}&array ? numeric-string : (
+ *     $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *       $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *         $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *           $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *         )
+ *        )
+ *     )
+ *   )
+ * )|\WP_Error
  */
 function get_terms( $args = array(), $deprecated = '' ) {
 	$term_query = new WP_Term_Query();
@@ -1604,7 +1618,13 @@ function unregister_term_meta( $taxonomy, $meta_key ) {
  *               Returns an array of the term ID and the term taxonomy ID if the taxonomy is specified and the pairing exists.
  *               Returns 0 if term ID 0 is passed to the function.
  *
- * @phpstan-return ($term is 0 ? 0 : ($term is '' ? null : ($taxonomy is '' ? string|null : array{term_id: string, term_taxonomy_id: string}|null)))
+ * @phpstan-return (
+ *   $term is 0 ? 0 : (
+ *     $term is '' ? null : (
+ *       $taxonomy is '' ? (string|null) : (array{term_id: string, term_taxonomy_id: string}|null)
+ *     )
+ *   )
+ * )
  */
 function term_exists( $term, $taxonomy = '', $parent_term = null ) {
 	global $_wp_suspend_cache_invalidation;
@@ -2289,7 +2309,21 @@ function wp_delete_category( $cat_id ) {
  *                                                  or WP_Error if any of the taxonomies do not exist.
  *                                                  See WP_Term_Query::get_terms() for more information.
  *
- * @phpstan-return ($object_ids is empty ? array{} : ($taxonomies is empty ? array{} : (($args is array{fields: 'names'|'slugs'}&array ? list<string> : ($args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : ($args is array{fields: 'id=>parent'}&array ? array<int, int> : ($args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : ($args is array{fields: 'count'}&array ? numeric-string : array<int, \WP_Term>)))))|\WP_Error)))
+ * @phpstan-return (
+ *   $object_ids is empty ? array{} : (
+ *     $taxonomies is empty ? array{} : (
+ *       $args is array{fields: 'count'}&array ? numeric-string : (
+ *         $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *           $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *             $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *               $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *             )
+ *           )
+ *         )
+ *       )|\WP_Error
+ *     )
+ *   )
+ * )
  */
 function wp_get_object_terms( $object_ids, $taxonomies, $args = array() ) {
 	if ( empty( $object_ids ) || empty( $taxonomies ) ) {

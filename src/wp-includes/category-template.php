@@ -535,7 +535,7 @@ function wp_dropdown_categories( $args = '' ) {
  * @return void|string|false Void if 'echo' argument is true, HTML list of categories if 'echo' is false.
  *                           False if the taxonomy does not exist.
  *
- * @phpstan-return ($args is array{echo: false|0}&array ? string|false : false|void)
+ * @phpstan-return ($args is array{echo: false|0}&array ? (string|false) : (false|void) )
  */
 function wp_list_categories( $args = '' ) {
 	$defaults = array(
@@ -715,7 +715,7 @@ function wp_list_categories( $args = '' ) {
  * @return void|string|string[] Void if 'echo' argument is true, or on failure. Otherwise, tag cloud
  *                              as a string or an array, depending on 'format' argument.
  *
- * @phpstan-return ($args is array{format: 'array'}&array ? array<int, string>|void : ($args is array{echo: false|0}&array ? string|void : void))
+ * @phpstan-return ($args is array{format: 'array'}&array ? (array<int, string>|void) : ($args is array{echo: false|0}&array ? (string|void) : void))
  */
 function wp_tag_cloud( $args = '' ) {
 	$defaults = array(

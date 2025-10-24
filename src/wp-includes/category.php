@@ -23,7 +23,17 @@
  * }
  * @return array List of category objects.
  *
- * @phpstan-return ($args is array{fields: 'count'}&array ? list<numeric-string> : ($args is array{fields: 'names'|'slugs'}&array ? list<string> : ($args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : ($args is array{fields: 'id=>parent'}&array ? array<int, int> : ($args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>)))))
+ * @phpstan-return (
+ *   $args is array{fields: 'count'}&array ? list<numeric-string> : (
+ *     $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *       $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *         $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *           $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *         )
+ *       )
+ *     )
+ *   )
+ * )
  */
 function get_categories( $args = '' ) {
 	$defaults = array( 'taxonomy' => 'category' );
@@ -92,7 +102,22 @@ function get_categories( $args = '' ) {
  *                                     WP_Error if $category is empty, null if it does not exist.
  *
  * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
- * @phpstan-return ($category is object ? array<array-key, mixed>|\WP_Term : array<array-key, mixed>|\WP_Term|\WP_Error|null) & ($output is 'ARRAY_A' ? array<string, mixed>|\WP_Error|null : ($output is 'ARRAY_N' ? array<int, mixed>|\WP_Error|null : \WP_Term|\WP_Error|null))
+ * @phpstan-return (
+ *   $category is object ? (
+ *     array<array-key, mixed>|\WP_Term
+ *   ) : (
+ *     array<array-key, mixed>|\WP_Term|\WP_Error|null) & (
+ *       $output is 'ARRAY_A' ?
+ *         ( array<string, mixed>|\WP_Error|null )
+ *       : (
+ *         $output is 'ARRAY_N' ?
+ *           ( array<int, mixed>|\WP_Error|null)
+ *         : ( \WP_Term|\WP_Error|null )
+ *         )
+ *       )
+ *     )
+ *   )
+ * )
  */
 function get_category( $category, $output = OBJECT, $filter = 'raw' ) {
 	$category = get_term( $category, 'category', $output, $filter );
@@ -130,7 +155,11 @@ function get_category( $category, $output = OBJECT, $filter = 'raw' ) {
  *                                     Returns null if it does not exist.
  *
  * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
- * @phpstan-return ($output is 'ARRAY_A' ? array<string, mixed>|\WP_Error|null : ($output is 'ARRAY_N' ? array<int, mixed>|\WP_Error|null : \WP_Term|\WP_Error|null))
+ * @phpstan-return (
+ *   $output is 'ARRAY_A' ? (array<string, mixed>|\WP_Error|null) : (
+ *     $output is 'ARRAY_N' ? (array<int, mixed>|\WP_Error|null) : (\WP_Term|\WP_Error|null)
+ *   )
+ * )
  */
 function get_category_by_path( $category_path, $full_match = true, $output = OBJECT ) {
 	$category_path  = rawurlencode( urldecode( $category_path ) );
@@ -306,7 +335,17 @@ function sanitize_category_field( $field, $value, $cat_id, $context ) {
  * @return WP_Term[]|int|WP_Error Array of 'post_tag' term objects, a count thereof,
  *                                or WP_Error if any of the taxonomies do not exist.
  *
- * @phpstan-return ($args is array{fields: 'count'}&array ? numeric-string : ($args is array{fields: 'names'|'slugs'}&array ? list<string> : ($args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : ($args is array{fields: 'id=>parent'}&array ? array<int, int> : ($args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>)))))|\WP_Error
+ * @phpstan-return (
+ *   $args is array{fields: 'count'}&array ? numeric-string : (
+ *     $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *       $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *         $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *           $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *         )
+ *       )
+ *     )
+ *   )
+ * ) |\WP_Error
  */
 function get_tags( $args = '' ) {
 	$defaults = array( 'taxonomy' => 'post_tag' );

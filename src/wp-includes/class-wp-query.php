@@ -3828,6 +3828,8 @@ class WP_Query {
 	 * @since 1.5.0
 	 *
 	 * @return bool True if posts are available, false if end of the loop.
+	 *
+	 * @phpstan-impure
 	 */
 	public function have_posts() {
 		if ( $this->current_post + 1 < $this->post_count ) {

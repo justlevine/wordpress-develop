@@ -421,7 +421,7 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 if ( current_user_can( 'upload_files' ) ) {
 	?>
 	<a href="<?php echo esc_url( admin_url( 'media-new.php' ) ); ?>" class="page-title-action"><?php echo esc_html__( 'Add Media File' ); ?></a>
-						<?php
+	<?php
 }
 
 if ( isset( $_REQUEST['s'] ) && strlen( $_REQUEST['s'] ) ) {

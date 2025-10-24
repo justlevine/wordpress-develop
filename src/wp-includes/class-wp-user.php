@@ -196,6 +196,13 @@ class WP_User {
 	 * @param string     $field The field to query against: Accepts 'id', 'ID', 'slug', 'email' or 'login'.
 	 * @param string|int $value The field value.
 	 * @return object|false Raw user object.
+	 *
+	 * @phpstan-param 'id'|'ID'|'slug'|'email'|'login' $field
+	 * @phpstan-return (
+	 *   $field is 'id'|'ID' ? (
+	 *     $value is not numeric ? false : (object|false)
+	 *   ) : ( $value is non-empty-string ? (object|false) : false )
+	 * )
 	 */
 	public static function get_data_by( $field, $value ) {
 		global $wpdb;
