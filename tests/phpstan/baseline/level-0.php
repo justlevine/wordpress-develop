@@ -74,6 +74,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/customize/class-wp-customize-header-image-setting.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Unsafe usage of new static\\(\\)\\.$#',
+	'identifier' => 'new.static',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-processor.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Class GdImage not found\\.$#',
 	'identifier' => 'class.notFound',
 	'count' => 1,

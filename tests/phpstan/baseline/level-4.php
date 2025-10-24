@@ -2,28 +2,28 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/about.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/credits.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to function is_array\\(\\) with array will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Function edit_link\\(\\) never returns WP_Error so it can be removed from the return type\\.$#',
+	'identifier' => 'return.unusedType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/bookmark.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always true\\.$#',
 	'identifier' => 'booleanNot.alwaysTrue',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-custom-image-header.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Strict comparison using \\=\\=\\= between \'themezip\' and \'themezip\' will always evaluate to true\\.$#',
+	'identifier' => 'identical.alwaysTrue',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-file-upload-upgrader.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Negated boolean expression is always true\\.$#',
@@ -98,26 +98,8 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-upgrader.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/dashboard.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^While loop condition is always true\\.$#',
-	'identifier' => 'while.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/dashboard.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to function method_exists\\(\\) with \'ParagonIE_Sodium…\' and \'runtime_speed_test\' will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/file.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function WP_Filesystem\\(\\) never returns null so it can be removed from the return type\\.$#',
-	'identifier' => 'return.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/file.php',
 ];
@@ -146,22 +128,16 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^While loop condition is always true\\.$#',
-	'identifier' => 'while.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/nav-menu.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to function is_numeric\\(\\) with float\\|int\\|numeric\\-string will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/plugin.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function delete_plugins\\(\\) never returns null so it can be removed from the return type\\.$#',
+	'message' => '#^Function _fix_attachment_links\\(\\) never returns WP_Error so it can be removed from the return type\\.$#',
 	'identifier' => 'return.unusedType',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/plugin.php',
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/post.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Taxonomy\\:\\:\\$meta_box_sanitize_cb \\(callable\\) in isset\\(\\) is not nullable\\.$#',
@@ -170,28 +146,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/post.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function delete_theme\\(\\) never returns null so it can be removed from the return type\\.$#',
+	'message' => '#^Function wp_create_category\\(\\) never returns WP_Error so it can be removed from the return type\\.$#',
 	'identifier' => 'return.unusedType',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Negated boolean expression is always false\\.$#',
-	'identifier' => 'booleanNot.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/install.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Ternary operator condition is always true\\.$#',
-	'identifier' => 'ternary.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/menu-header.php',
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/taxonomy.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Site\\:\\:\\$domain \\(string\\) in isset\\(\\) is not nullable\\.$#',
@@ -204,12 +162,6 @@ $ignoreErrors[] = [
 	'identifier' => 'isset.offset',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/nav-menus.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/sites.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Strict comparison using \\=\\=\\= between \'update\\-selected\' and mixed~\\(\'activate\'\\|\'activate\\-selected\'\\|\'deactivate\'\\|\'deactivate\\-selected\'\\|\'delete\\-selected\'\\|\'disable\\-auto\\-update\'\\|\'disable\\-auto\\-update\\-selected\'\\|\'enable\\-auto\\-update\'\\|\'enable\\-auto\\-update\\-selected\'\\|\'error_scrape\'\\|\'resume\'\\|\'update\\-selected\'\\) will always evaluate to false\\.$#',
@@ -230,6 +182,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/themes.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with 0\\|0\\.0\\|\'\'\\|\'0\'\\|array\\{\\}\\|false\\|null will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-admin/update.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Property WP_Block_Type\\:\\:\\$editor_style_handles \\(array\\<string\\>\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
 	'count' => 1,
@@ -240,12 +198,6 @@ $ignoreErrors[] = [
 	'identifier' => 'nullCoalesce.offset',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/block-supports/block-style-variations.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Strict comparison using \\!\\=\\= between null and string will always evaluate to true\\.$#',
-	'identifier' => 'notIdentical.alwaysTrue',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/block-supports/layout.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Result of \\|\\| is always true\\.$#',
@@ -272,12 +224,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/block-template-utils.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^While loop condition is always true\\.$#',
-	'identifier' => 'while.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/block-template.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Left side of && is always true\\.$#',
 	'identifier' => 'booleanAnd.leftAlwaysTrue',
 	'count' => 1,
@@ -288,12 +234,6 @@ $ignoreErrors[] = [
 	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/capabilities.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Call to function is_string\\(\\) with string will always evaluate to true\\.$#',
-	'identifier' => 'function.alreadyNarrowedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-block-bindings-registry.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Block_Bindings_Registry\\:\\:\\$supported_blocks is never read, only written\\.$#',
@@ -342,12 +282,6 @@ $ignoreErrors[] = [
 	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-block.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Negated boolean expression is always false\\.$#',
-	'identifier' => 'booleanNot.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-comment-query.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Property WP_Customize_Control\\:\\:\\$active_callback \\(callable\\) in empty\\(\\) is not falsy\\.$#',
@@ -422,48 +356,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-customize-widgets.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property WP_Dependencies\\:\\:\\$all_queued_deps \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-dependencies.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-dependencies.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Static property WP_Duotone\\:\\:\\$global_styles_block_names \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Static property WP_Duotone\\:\\:\\$global_styles_block_names is never written, only read\\.$#',
-	'identifier' => 'property.onlyRead',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Static property WP_Duotone\\:\\:\\$global_styles_presets \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Static property WP_Duotone\\:\\:\\$global_styles_presets is never written, only read\\.$#',
-	'identifier' => 'property.onlyRead',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-duotone.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property WP_Http_Cookie\\:\\:\\$domain \\(string\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
 	'count' => 1,
@@ -524,81 +416,15 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property WP_Query\\:\\:\\$queried_object_id \\(int\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 4,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Query\\:\\:\\$query \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Query\\:\\:\\$stopwords \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method WP_Recovery_Mode_Cookie_Service\\:\\:recovery_mode_hash\\(\\) never returns false so it can be removed from the return type\\.$#',
 	'identifier' => 'return.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-recovery-mode-cookie-service.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$author_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$comment_feed_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$date_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$feed_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$page_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Rewrite\\:\\:\\$search_structure \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Strict comparison using \\!\\=\\= between null and int\\|string will always evaluate to true\\.$#',
 	'identifier' => 'notIdentical.alwaysTrue',
 	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 6,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-rewrite.php',
 ];
 $ignoreErrors[] = [
@@ -614,58 +440,16 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-scripts.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Call to function is_wp_error\\(\\) with array will always evaluate to false\\.$#',
+	'identifier' => 'function.impossibleType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-tax-query.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Comparison operation "\\<\\=" between 0 and int\\<0, max\\>\\|false is always true\\.$#',
 	'identifier' => 'smallerOrEqual.alwaysTrue',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme-json.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Method WP_Theme\\:\\:parent\\(\\) never returns false so it can be removed from the return type\\.$#',
-	'identifier' => 'return.unusedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$block_template_folders \\(array\\<string\\>\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$block_theme \\(bool\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$headers_sanitized \\(array\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$name_translated \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$parent \\(WP_Theme\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$textdomain_loaded \\(bool\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Theme\\:\\:\\$theme_root_uri \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Static method WP_Theme\\:\\:_check_headers_property_has_correct_type\\(\\) is unused\\.$#',
@@ -677,12 +461,6 @@ $ignoreErrors[] = [
 	'message' => '#^Static property WP_Theme\\:\\:\\$persistently_cache \\(bool\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
-	'identifier' => 'deadCode.unreachable',
-	'count' => 4,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-theme.php',
 ];
 $ignoreErrors[] = [
@@ -770,12 +548,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/customize/class-wp-customize-partial.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^While loop condition is always false\\.$#',
-	'identifier' => 'while.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/feed-rdf.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Call to function method_exists\\(\\) with \'SimplePie_Cache\' and \'register\' will always evaluate to true\\.$#',
 	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 1,
@@ -860,16 +632,28 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/general-template.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Negated boolean expression is always true\\.$#',
-	'identifier' => 'booleanNot.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/general-template.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
 	'identifier' => 'deadCode.unreachable',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-doctype-info.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^If condition is always true\\.$#',
+	'identifier' => 'if.alwaysTrue',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-processor.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Left side of && is always true\\.$#',
+	'identifier' => 'booleanAnd.leftAlwaysTrue',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-processor.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unreachable statement \\- code above always terminates\\.$#',
+	'identifier' => 'deadCode.unreachable',
+	'count' => 17,
+	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-processor.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Method WP_HTML_Tag_Processor\\:\\:skip_rawtext\\(\\) is unused\\.$#',
@@ -932,12 +716,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-tag-processor.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Call to function is_array\\(\\) with array will always evaluate to true\\.$#',
-	'identifier' => 'function.alreadyNarrowedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/interactivity-api/class-wp-interactivity-api.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Method WP_Interactivity_API\\:\\:data_wp_bind_processor\\(\\) is unused\\.$#',
 	'identifier' => 'method.unused',
 	'count' => 1,
@@ -998,14 +776,20 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Property WP_Post\\:\\:\\$post_status \\(string\\) in isset\\(\\) is not nullable\\.$#',
+	'identifier' => 'isset.property',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/link-template.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Call to function is_string\\(\\) with bool will always evaluate to false\\.$#',
 	'identifier' => 'function.impossibleType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/load.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
+	'message' => '#^Call to function wp_die\\(\\) with arguments non\\-falsy\\-string, mixed and array\\{exit\\: false, code\\: \'mysql_not_found\'\\} will always evaluate to true\\.$#',
+	'identifier' => 'function.alreadyNarrowedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/load.php',
 ];
@@ -1034,15 +818,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/ms-functions.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Negated boolean expression is always false\\.$#',
-	'identifier' => 'booleanNot.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property WP_Term\\:\\:\\$term_id \\(int\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/nav-menu.php',
 ];
 $ignoreErrors[] = [
@@ -1100,18 +878,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Result of && is always false\\.$#',
-	'identifier' => 'booleanAnd.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Property WP_Post\\:\\:\\$post_name \\(string\\) in isset\\(\\) is not nullable\\.$#',
 	'identifier' => 'isset.property',
 	'count' => 1,
@@ -1154,58 +920,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/sitemaps/providers/class-wp-sitemaps-posts.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Function get_term_to_edit\\(\\) never returns int so it can be removed from the return type\\.$#',
-	'identifier' => 'return.unusedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^While loop condition is always true\\.$#',
-	'identifier' => 'while.alwaysTrue',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/theme-compat/embed.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Function remove_theme_support\\(\\) never returns void so it can be removed from the return type\\.$#',
 	'identifier' => 'return.unusedType',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/theme.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_Site\\:\\:\\$domain \\(string\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Property WP_User\\:\\:\\$ID \\(int\\) in isset\\(\\) is not nullable\\.$#',
-	'identifier' => 'isset.property',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Right side of && is always true\\.$#',
-	'identifier' => 'booleanAnd.rightAlwaysTrue',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^If condition is always false\\.$#',
-	'identifier' => 'if.alwaysFalse',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-login.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Call to method WP_Theme\\:\\:load_textdomain\\(\\) on a separate line has no effect\\.$#',
-	'identifier' => 'method.resultUnused',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-settings.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Function validate_another_blog_signup\\(\\) never returns null so it can be removed from the return type\\.$#',
-	'identifier' => 'return.unusedType',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-signup.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];
