@@ -302,6 +302,18 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/file.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function wp_slash$#',
+	'identifier' => 'argument.templateType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/image.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function wp_slash$#',
+	'identifier' => 'argument.templateType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/upgrade.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Function get_registered_block_templates\\(\\) has parameter \\$query with no type specified\\.$#',
 	'identifier' => 'missingType.parameter',
 	'count' => 1,
@@ -512,12 +524,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-embed.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Method WP_Feed_Cache_Transient\\:\\:__construct\\(\\) has parameter \\$type with no type specified\\.$#',
-	'identifier' => 'missingType.parameter',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-feed-cache-transient.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Class WP_Hook implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#',
 	'identifier' => 'missingType.generics',
 	'count' => 1,
@@ -572,6 +578,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-image-editor.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function sanitize_post$#',
+	'identifier' => 'argument.templateType',
+	'count' => 2,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-post.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Property WP_Query\\:\\:\\$compat_fields has no type specified\\.$#',
 	'identifier' => 'missingType.property',
 	'count' => 1,
@@ -582,6 +594,12 @@ $ignoreErrors[] = [
 	'identifier' => 'missingType.property',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function sanitize_term$#',
+	'identifier' => 'argument.templateType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-term.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Class WP_Theme implements generic interface ArrayAccess but does not specify its types\\: TKey, TValue$#',
@@ -672,6 +690,12 @@ $ignoreErrors[] = [
 	'identifier' => 'missingType.generics',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/class-wp-rest-request.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Unable to resolve the template type T in call to function wp_slash$#',
+	'identifier' => 'argument.templateType',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Function wp_scrub_utf8\\(\\) has parameter \\$text with no type specified\\.$#',

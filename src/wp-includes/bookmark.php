@@ -19,7 +19,11 @@
  *                               correspond to an stdClass object, an associative array, or a numeric array,
  *                               respectively. Default OBJECT.
  * @param string       $filter   Optional. How to sanitize bookmark fields. Default 'raw'.
+ *
  * @return array|object|null Type returned depends on $output value.
+ *
+ * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
+ * @phpstan-return null|($output is 'ARRAY_A' ? array<string, mixed> : ($output is 'ARRAY_N' ? array<int, mixed> : \stdClass))
  */
 function get_bookmark( $bookmark, $output = OBJECT, $filter = 'raw' ) {
 	global $wpdb;

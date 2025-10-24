@@ -408,6 +408,7 @@ function login_footer( $input_id = '' ) {
 					wp_dropdown_languages( apply_filters( 'login_language_dropdown_args', $args ) );
 					?>
 
+					<?php /** @phpstan-ignore-next-line if.alwaysFalse (globals can change value) */ ?>
 					<?php if ( $interim_login ) { ?>
 						<input type="hidden" name="interim-login" value="1" />
 					<?php } ?>

@@ -95,15 +95,6 @@ final class WP_Block_Bindings_Registry {
 	 * @return WP_Block_Bindings_Source|false Source when the registration was successful, or `false` on failure.
 	 */
 	public function register( string $source_name, array $source_properties ) {
-		if ( ! is_string( $source_name ) ) {
-			_doing_it_wrong(
-				__METHOD__,
-				__( 'Block bindings source name must be a string.' ),
-				'6.5.0'
-			);
-			return false;
-		}
-
 		if ( preg_match( '/[A-Z]+/', $source_name ) ) {
 			_doing_it_wrong(
 				__METHOD__,

@@ -20,7 +20,7 @@ class WP_Widget_Factory {
 	 * Widgets array.
 	 *
 	 * @since 2.8.0
-	 * @var array
+	 * @var array<string, WP_Widget>
 	 */
 	public $widgets = array();
 
@@ -54,6 +54,8 @@ class WP_Widget_Factory {
 	 *              instead of simply a `WP_Widget` subclass name.
 	 *
 	 * @param string|WP_Widget $widget Either the name of a `WP_Widget` subclass or an instance of a `WP_Widget` subclass.
+	 *
+	 * @phpstan-param class-string|WP_Widget $widget
 	 */
 	public function register( $widget ) {
 		if ( $widget instanceof WP_Widget ) {
@@ -71,6 +73,8 @@ class WP_Widget_Factory {
 	 *              instead of simply a `WP_Widget` subclass name.
 	 *
 	 * @param string|WP_Widget $widget Either the name of a `WP_Widget` subclass or an instance of a `WP_Widget` subclass.
+	 *
+	 * @phpstan-param class-string<WP_Widget>|WP_Widget $widget
 	 */
 	public function unregister( $widget ) {
 		if ( $widget instanceof WP_Widget ) {

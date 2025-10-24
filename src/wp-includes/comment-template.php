@@ -489,6 +489,8 @@ function comment_author_url_link( $link_text = '', $before = '', $after = '', $c
  * @param bool            $display   Optional. Whether to print or return the output.
  *                                   Default true.
  * @return void|string Void if `$display` argument is true, comment classes if `$display` is false.
+ *
+ * @phpstan-return ($display is true ? void : string)
  */
 function comment_class( $css_class = '', $comment = null, $post = null, $display = true ) {
 	// Separates classes with a single space, collates classes for comment DIV.
@@ -834,7 +836,10 @@ function get_comment_link( $comment = null, $args = array() ) {
 
 	if ( $cpage && get_option( 'page_comments' ) ) {
 		if ( $wp_rewrite->using_permalinks() ) {
+			// We build the link first.
 			$comment_link = trailingslashit( $comment_link ) . $wp_rewrite->comments_pagination_base . '-' . $cpage;
+			// Then, we filter & slash it.
+			$comment_link = user_trailingslashit( $comment_link, 'comment' );
 		} else {
 			$comment_link = add_query_arg( 'cpage', $cpage, $comment_link );
 		}

@@ -1672,6 +1672,8 @@ function wp_get_l10n_php_file_data( $php_file ) {
  *                                                  instead of an empty value. Default false.
  * }
  * @return string HTML dropdown list of languages.
+ *
+ * @phpstan-return ( $args is array{id: null|''}&array ? void : ( $args is array{name: null|''}&array ? void : string ) )
  */
 function wp_dropdown_languages( $args = array() ) {
 

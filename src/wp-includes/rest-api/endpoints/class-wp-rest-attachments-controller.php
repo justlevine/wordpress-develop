@@ -470,6 +470,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		}
 
 		$attachment = get_post( $request['id'] );
+		$schema     = $this->get_item_schema();
 
 		if ( ! empty( $schema['properties']['featured_media'] ) && isset( $request['featured_media'] ) ) {
 			$thumbnail_update = $this->handle_featured_media( $request['featured_media'], $attachment->ID );
@@ -777,7 +778,7 @@ class WP_REST_Attachments_Controller extends WP_REST_Posts_Controller {
 		$new_attachment_post->post_parent = $new_attachment_post->post_parent ?? 0;
 
 		// Insert the new attachment post.
-		$new_attachment_id = wp_insert_attachment( wp_slash( $new_attachment_post ), $saved['path'], 0, true );
+		$new_attachment_id = wp_insert_attachment( wp_slash( (array) $new_attachment_post ), $saved['path'], 0, true );
 
 		if ( is_wp_error( $new_attachment_id ) ) {
 			if ( 'db_update_error' === $new_attachment_id->get_error_code() ) {

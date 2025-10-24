@@ -207,6 +207,8 @@ function _walk_bookmarks( $bookmarks, $args = '' ) {
  *                                          Default 'ASC'.
  * }
  * @return void|string Void if 'echo' argument is true, HTML list of bookmarks if 'echo' is false.
+ *
+ * @phpstan-return ($args is array{echo: false|0}&array ? string : void)
  */
 function wp_list_bookmarks( $args = '' ) {
 	$defaults = array(

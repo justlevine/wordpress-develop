@@ -2,12 +2,6 @@
 
 $ignoreErrors = [];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$key of function remove_query_arg expects array\\<string\\>\\|string, false given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-activate.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#3 \\$subject of function str_replace expects array\\<string\\>\\|string, float given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -32,21 +26,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/comment.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, bool given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/customize.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$position of function wp_comment_reply expects int, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/edit-comments.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 5,
 	'path' => __DIR__ . '/../../../src/wp-admin/edit-comments.php',
 ];
 $ignoreErrors[] = [
@@ -86,12 +68,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/edit.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'print_emoji_styles\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/admin-filters.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$attachment of function wp_get_attachment_id3_keys expects WP_Post, stdClass given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -116,15 +92,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
+	'message' => '#^Parameter \\#2 \\$args of function _get_list_table expects array\\{screen\\?\\: string\\}, array\\{screen\\: WP_Screen\\|null\\} given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_diff expects an array of values castable to string, array\\<int, array\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/ajax-actions.php',
 ];
 $ignoreErrors[] = [
@@ -152,25 +122,13 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-automatic-upgrader-skin.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-bulk-upgrader-skin.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_js expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 4,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-bulk-upgrader-skin.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$text of function submit_button expects string, null given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-custom-background.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, \\(float\\|int\\) given\\.$#',
+	'message' => '#^Parameter \\#1 \\$choice of method Custom_Image_Header\\:\\:set_header_image\\(\\) expects \'random\\-default\\-image\'\\|\'random\\-uploaded…\'\\|array\\{attachment_id\\: int\\<1, max\\>, url\\: string, width\\: int\\<0, max\\>, height\\: int\\<0, max\\>\\}, \'remove\\-header\' given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-custom-image-header.php',
@@ -186,12 +144,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-language-pack-upgrader.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-walker-nav-menu-edit.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$str of function md5 expects string, int given\\.$#',
@@ -248,70 +200,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-ms-themes-list-table.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-ms-users-list-table.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#3 \\$number of function _nx expects int, float given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-plugin-install-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-plugins-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$array of function implode expects array\\<string\\>, array\\<stdClass\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-posts-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-data-export-requests-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<0, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-data-export-requests-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<0, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$keys of function array_fill_keys expects an array of values castable to string, array\\<stdClass\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-requests-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-privacy-requests-table.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<1, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-screen.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$version of function get_core_checksums expects string, float given\\.$#',
@@ -336,6 +228,12 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-site-health.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$args of method WP_List_Table\\:\\:set_pagination_args\\(\\) expects array\\{total_items\\?\\: int, total_pages\\?\\: int, per_page\\?\\: int\\}, array\\{total_items\\: string\\|WP_Error, per_page\\: mixed\\} given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/class-wp-terms-list-table.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$args of function WP_Filesystem expects array\\|false, true given\\.$#',
@@ -368,6 +266,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/dashboard.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$term of function get_term expects int\\|object, string given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-admin/includes/export.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$callback of function add_filter expects callable\\(\\)\\: mixed, \'wxr_filter_postmeta\' given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -383,12 +287,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$image of function is_gd_image expects GdImage\\|resource\\|false, WP_Image_Editor given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/image-edit.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/image-edit.php',
 ];
 $ignoreErrors[] = [
@@ -452,46 +350,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/media.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$result of function wp_parse_str expects array, \\(string\\|false\\) given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/menu.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/meta-boxes.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 8,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/misc.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<0, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/misc.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<1, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/misc.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/ms.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#3 \\$value of function update_blog_status expects string, int given\\.$#',
@@ -528,12 +390,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 4,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/plugin.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/includes/post.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$fallback_title of function sanitize_title expects string, int given\\.$#',
@@ -578,7 +434,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/translation-install.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
+	'message' => '#^Parameter \\#2 \\$args of function _get_list_table expects array\\{screen\\?\\: string\\}, array\\{screen\\: WP_Screen\\|null\\} given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/includes/update.php',
@@ -608,12 +464,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/install.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 5,
-	'path' => __DIR__ . '/../../../src/wp-admin/nav-menus.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$menu_data of function wp_save_nav_menu_items expects array\\<array\\>, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -632,19 +482,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/network/site-info.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/site-info.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$network_id of function can_edit_network expects int, string given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/site-settings.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/network/site-settings.php',
@@ -656,52 +494,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/network/site-themes.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/site-themes.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$network_id of function can_edit_network expects int, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-admin/network/site-users.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 4,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/site-users.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/network/sites.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<2, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/options-discussion.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, bool given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/options-general.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<0, 6\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/options-general.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_diff expects an array of values castable to string, array\\<int, array\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/plugins.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$callback of function array_filter expects \\(callable\\(mixed\\)\\: bool\\)\\|null, \'validate_file\' given\\.$#',
@@ -722,28 +518,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-admin/update.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-admin/user-edit.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-admin/users.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$userid of function count_user_posts expects int, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/author-template.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'print_emoji_styles\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/block-editor.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$separator of function explode expects string, float given\\.$#',
@@ -762,12 +540,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/blocks.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_intersect expects an array of values castable to string, array\\<string\\|WP_Post_Type\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/canonical.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$callback of function preg_replace_callback expects callable\\(array\\<string\\>\\)\\: string, \'lowercase_octets\' given\\.$#',
@@ -791,12 +563,6 @@ $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$blog_id of function get_home_url expects int\\|null, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-admin-bar.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'wp_admin_bar_header\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-admin-bar.php',
 ];
 $ignoreErrors[] = [
@@ -824,21 +590,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-comment.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-customize-control.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$ajax_message of method WP_Customize_Manager\\:\\:wp_die\\(\\) expects string\\|WP_Error, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 6,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-customize-manager.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$arr1 of function array_diff expects an array of values castable to string, array\\<stdClass\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-customize-manager.php',
 ];
 $ignoreErrors[] = [
@@ -876,12 +630,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-customize-widgets.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_html expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-date-query.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$parent_query of method WP_Date_Query\\:\\:get_sql_for_clause\\(\\) expects array, string given\\.$#',
@@ -968,13 +716,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_intersect expects an array of values castable to string, array\\<string\\|WP_Taxonomy\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$array of function implode expects array\\<string\\>, array\\<array\\|string\\> given\\.$#',
+	'message' => '#^Parameter \\#2 \\$array of function implode expects array\\<string\\>, array\\<string, array\\|string\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-query.php',
@@ -1068,12 +810,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/class-wp-xmlrpc-server.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_intersect expects an array of values castable to string, array\\<string\\|WP_Post_Type\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/class-wp.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$comment_id of function get_page_of_comment expects int, string given\\.$#',
@@ -1172,28 +908,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/customize/class-wp-customize-selective-refresh.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'print_embed_styles\' given\\.$#',
+	'message' => '#^Parameter \\#1 \\$new_blog_id of function switch_to_blog expects int, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/default-filters.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'print_emoji_styles\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/default-filters.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'the_block_template…\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/default-filters.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$callback of function add_action expects callable\\(\\)\\: mixed, \'wp_print_auto_sizes…\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/default-filters.php',
+	'path' => __DIR__ . '/../../../src/wp-includes/embed.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$response of method WP_REST_Server\\:\\:response_to_data\\(\\) expects WP_REST_Response, WP_HTTP_Response given\\.$#',
@@ -1280,12 +998,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/functions.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, float given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/general-template.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$replace of function str_replace expects array\\<string\\>\\|string, int\\<1, max\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 2,
@@ -1302,6 +1014,12 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/general-template.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$name of method WP_HTML_Tag_Processor\\:\\:set_bookmark\\(\\) expects string, int given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/html-api/class-wp-html-processor.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$blog_id of function get_admin_url expects int\\|null, string given\\.$#',
@@ -1340,19 +1058,7 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/load.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int\\<1, 9\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/media-template.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_html expects string, int\\<1, 9\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/media-template.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$array of function array_unique expects an array of values castable to string, array\\<string\\|WP_Taxonomy\\> given\\.$#',
+	'message' => '#^Parameter \\#1 \\$array of function array_unique expects an array of values castable to string, array\\<int\\|string, string\\|WP_Taxonomy\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/media.php',
@@ -1374,30 +1080,6 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/ms-load.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$month of function wp_checkdate expects int, \\(string\\|false\\) given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/ms-site.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$day of function wp_checkdate expects int, \\(string\\|false\\) given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/ms-site.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$object_id of function delete_metadata expects int, null given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/ms-site.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#3 \\$year of function wp_checkdate expects int, \\(string\\|false\\) given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/ms-site.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$post_id of function wp_delete_post expects int, string given\\.$#',
@@ -1448,6 +1130,12 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/pluggable.php',
 ];
 $ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$attachment of function is_attachment expects array\\<int\\|string\\>\\|int\\|string, WP_Post given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
+];
+$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$url of function user_trailingslashit expects string, int\\<min, 0\\>\\|int\\<2, max\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -1466,27 +1154,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/post-template.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$keys of function array_fill_keys expects an array of values castable to string, array\\<stdClass\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$string of function strlen expects string, int\\<2, max\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 3,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$arr2 of function array_diff expects an array of values castable to string, array\\<stdClass\\|string\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$array of function implode expects array\\<string\\>, array\\<string\\|WP_Post_Type\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/post.php',
 ];
 $ignoreErrors[] = [
@@ -1498,14 +1168,8 @@ $ignoreErrors[] = [
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$data_object of method WP_REST_Controller\\:\\:update_additional_fields_for_object\\(\\) expects object, array given\\.$#',
 	'identifier' => 'argument.type',
-	'count' => 1,
+	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$value of function wp_slash expects array\\|string, stdClass\\|WP_Error given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$comment_id of function get_comment_type expects int\\|WP_Comment, string given\\.$#',
@@ -1550,18 +1214,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$value of method WP_HTTP_Response\\:\\:header\\(\\) expects string, array\\|int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$value of method WP_HTTP_Response\\:\\:header\\(\\) expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$value of method WP_HTTP_Response\\:\\:header\\(\\) expects string, int given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
@@ -1578,6 +1230,12 @@ $ignoreErrors[] = [
 	'identifier' => 'argument.type',
 	'count' => 2,
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-global-styles-revisions-controller.php',
+];
+$ignoreErrors[] = [
+	'message' => '#^Parameter \\#1 \\$data_object of method WP_REST_Controller\\:\\:update_additional_fields_for_object\\(\\) expects object, array given\\.$#',
+	'identifier' => 'argument.type',
+	'count' => 1,
+	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php',
 ];
 $ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$value of method WP_HTTP_Response\\:\\:header\\(\\) expects string, int given\\.$#',
@@ -1640,12 +1298,6 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$arr1 of function array_diff expects an array of values castable to string, list\\<string\\|WP_Post_Type\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/rest-api/search/class-wp-rest-post-search-handler.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$array_arg of function usort contains unresolvable type\\.$#',
 	'identifier' => 'argument.unresolvableType',
 	'count' => 1,
@@ -1664,33 +1316,9 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/script-loader.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$terms of function wp_update_term_count expects array\\|int, null given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#2 \\$array of function implode expects array\\<string\\>, array\\<array\\|string\\> given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 2,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$fallback_title of function sanitize_title expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$fallback_title of function sanitize_title expects string, int\\|WP_Error given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#2 \\$taxonomy of function wp_update_term_count expects string, null given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/taxonomy.php',
 ];
 $ignoreErrors[] = [
@@ -1724,40 +1352,10 @@ $ignoreErrors[] = [
 	'path' => __DIR__ . '/../../../src/wp-includes/theme-templates.php',
 ];
 $ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$string of function mb_strlen expects string, int\\<2, max\\> given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/user.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#3 \\$control_callback of function wp_register_widget_control expects callable\\(\\)\\: mixed, \'\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/widgets.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#3 \\$output_callback of function wp_register_sidebar_widget expects callable\\(\\)\\: mixed, \'\' given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/widgets.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_attr expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-includes/widgets/class-wp-nav-menu-widget.php',
-];
-$ignoreErrors[] = [
 	'message' => '#^Parameter \\#1 \\$post of function get_the_title expects int\\|WP_Post, string given\\.$#',
 	'identifier' => 'argument.type',
 	'count' => 1,
 	'path' => __DIR__ . '/../../../src/wp-includes/widgets/class-wp-widget-recent-comments.php',
-];
-$ignoreErrors[] = [
-	'message' => '#^Parameter \\#1 \\$text of function esc_html expects string, int given\\.$#',
-	'identifier' => 'argument.type',
-	'count' => 1,
-	'path' => __DIR__ . '/../../../src/wp-mail.php',
 ];
 
 return ['parameters' => ['ignoreErrors' => $ignoreErrors]];

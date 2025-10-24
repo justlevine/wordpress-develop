@@ -97,6 +97,13 @@ if ( ! function_exists( 'get_user_by' ) ) :
 	 * @param string     $field The field to retrieve the user with. id | ID | slug | email | login.
 	 * @param int|string $value A value for $field. A user ID, slug, email address, or login name.
 	 * @return WP_User|false WP_User object on success, false on failure.
+	 *
+	 * @phpstan-param 'id'|'ID'|'slug'|'email'|'login' $field
+	 * @phpstan-return (
+	 *   $field is 'id'|'ID' ? (
+	 *     $value is not numeric ? false : (\WP_User|false)
+	 *   ) : ( $value is non-empty-string ? (\WP_User|false) : false )
+	 * )
 	 */
 	function get_user_by( $field, $value ) {
 		$userdata = WP_User::get_data_by( $field, $value );
@@ -1353,6 +1360,9 @@ if ( ! function_exists( 'check_admin_referer' ) ) :
 	 * @return int|false 1 if the nonce is valid and generated between 0-12 hours ago,
 	 *                   2 if the nonce is valid and generated between 12-24 hours ago.
 	 *                   False if the nonce is invalid.
+	 *
+	 * @phpstan-param -1|string $action
+	 * @phpstan-return 1|2|false
 	 */
 	function check_admin_referer( $action = -1, $query_arg = '_wpnonce' ) {
 		if ( -1 === $action ) {
@@ -1398,6 +1408,9 @@ if ( ! function_exists( 'check_ajax_referer' ) ) :
 	 * @return int|false 1 if the nonce is valid and generated between 0-12 hours ago,
 	 *                   2 if the nonce is valid and generated between 12-24 hours ago.
 	 *                   False if the nonce is invalid.
+	 *
+	 * @phpstan-param -1|string $action
+	 * @phpstan-return 1|2|false
 	 */
 	function check_ajax_referer( $action = -1, $query_arg = false, $stop = true ) {
 		if ( -1 === $action ) {
@@ -2435,6 +2448,9 @@ if ( ! function_exists( 'wp_verify_nonce' ) ) :
 	 * @return int|false 1 if the nonce is valid and generated between 0-12 hours ago,
 	 *                   2 if the nonce is valid and generated between 12-24 hours ago.
 	 *                   False if the nonce is invalid.
+	 *
+	 * @phpstan-param -1|string $action
+	 * @phpstan-return 1|2|false
 	 */
 	function wp_verify_nonce( $nonce, $action = -1 ) {
 		$nonce = (string) $nonce;
@@ -2498,6 +2514,8 @@ if ( ! function_exists( 'wp_create_nonce' ) ) :
 	 *
 	 * @param string|int $action Scalar value to add context to the nonce.
 	 * @return string The token.
+	 *
+	 * @phpstan-param -1|string $action
 	 */
 	function wp_create_nonce( $action = -1 ) {
 		$user = wp_get_current_user();

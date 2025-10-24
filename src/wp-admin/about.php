@@ -298,9 +298,12 @@ require_once ABSPATH . 'wp-admin/admin-header.php';
 
 <?php
 
-// These are strings we may use to describe maintenance/security releases, where we aim for no new strings.
 return;
 
+/**
+ * These are strings we may use to describe maintenance/security releases, where we aim for no new strings.
+ * @phpstan-ignore deadCode.unreachable
+ */
 __( 'Maintenance Release' );
 __( 'Maintenance Releases' );
 

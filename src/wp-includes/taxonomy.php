@@ -278,6 +278,8 @@ function create_initial_taxonomies() {
  *                         one element from the array needs to match; 'and' means all elements must match.
  *                         Default 'and'.
  * @return string[]|WP_Taxonomy[] An array of taxonomy names or objects.
+ *
+ * @phpstan-return ($output is 'names' ? array<int, string> : array<int, \WP_Taxonomy>)
  */
 function get_taxonomies( $args = array(), $output = 'names', $operator = 'and' ) {
 	global $wp_taxonomies;
@@ -307,6 +309,8 @@ function get_taxonomies( $args = array(), $output = 'names', $operator = 'and' )
  * @param string                  $output      Optional. The type of output to return in the array. Accepts either
  *                                             'names' or 'objects'. Default 'names'.
  * @return string[]|WP_Taxonomy[] The names or objects of all taxonomies of `$object_type`.
+ *
+ * @phpstan-return ($output is 'names' ? array<int, string> : array<string, \WP_Taxonomy>)
  */
 function get_object_taxonomies( $object_type, $output = 'names' ) {
 	global $wp_taxonomies;
@@ -971,8 +975,12 @@ function get_tax_sql( $tax_query, $primary_table, $primary_id_column ) {
  *                                     correspond to a WP_Term object, an associative array, or a numeric array,
  *                                     respectively. Default OBJECT.
  * @param string             $filter   Optional. How to sanitize term fields. Default 'raw'.
- * @return WP_Term|array|WP_Error|null WP_Term instance (or array) on success, depending on the `$output` value.
- *                                     WP_Error if `$taxonomy` does not exist. Null for miscellaneous failure.
+ *
+ * @return WP_Term|array|WP_Error|null Term data on success, WP_Error if `$taxonomy` does not exist.
+ *                                     Null for miscellaneous failure.
+ *
+ * @phpstan-param 'OBJECT'|'ARRAY_A'|'ARRAY_N' $output
+ * @phpstan-return ( $output is 'ARRAY_A' ? array<string,mixed> : ($output is 'ARRAY_N' ? array<int,mixed> : \WP_Term) )|\WP_Error|null
  */
 function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 	if ( empty( $term ) ) {
@@ -1093,8 +1101,15 @@ function get_term( $term, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
  *                             correspond to a WP_Term object, an associative array, or a numeric array,
  *                             respectively. Default OBJECT.
  * @param string     $filter   Optional. How to sanitize term fields. Default 'raw'.
+ *
  * @return WP_Term|array|false WP_Term instance (or array) on success, depending on the `$output` value.
  *                             False if `$taxonomy` does not exist or `$term` was not found.
+ *
+ * @phpstan-return (
+ *   $output is 'ARRAY_A' ? array<string,mixed> : (
+ *     $output is 'ARRAY_N' ? array<int,mixed> : \WP_Term
+ *   )
+ * )|false
  */
 function get_term_by( $field, $value, $taxonomy = '', $output = OBJECT, $filter = 'raw' ) {
 
@@ -1245,7 +1260,9 @@ function get_term_field( $field, $term, $taxonomy = '', $context = 'display' ) {
  *
  * @param int|object $id       Term ID or object.
  * @param string     $taxonomy Taxonomy name.
- * @return string|int|null|WP_Error Will return empty string if $term is not an object.
+ * @return string|WP_Term|WP_Error Will return empty string if $term is not an object.
+ *
+ * @phpstan-return ''|\WP_Error|\WP_Term|WP_Error
  */
 function get_term_to_edit( $id, $taxonomy ) {
 	$term = get_term( $id, $taxonomy );
@@ -1312,6 +1329,18 @@ function get_term_to_edit( $id, $taxonomy ) {
  * @return WP_Term[]|int[]|string[]|string|WP_Error Array of terms, a count thereof as a numeric string,
  *                                                  or WP_Error if any of the taxonomies do not exist.
  *                                                  See the function description for more information.
+ *
+ * @phpstan-return (
+ *   $args is array{fields: 'count'}&array ? numeric-string : (
+ *     $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *       $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *         $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *           $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *         )
+ *        )
+ *     )
+ *   )
+ * )|\WP_Error
  */
 function get_terms( $args = array(), $deprecated = '' ) {
 	$term_query = new WP_Term_Query();
@@ -1588,6 +1617,14 @@ function unregister_term_meta( $taxonomy, $meta_key ) {
  *               Returns the term ID if no taxonomy is specified and the term ID exists.
  *               Returns an array of the term ID and the term taxonomy ID if the taxonomy is specified and the pairing exists.
  *               Returns 0 if term ID 0 is passed to the function.
+ *
+ * @phpstan-return (
+ *   $term is 0 ? 0 : (
+ *     $term is '' ? null : (
+ *       $taxonomy is '' ? (string|null) : (array{term_id: string, term_taxonomy_id: string}|null)
+ *     )
+ *   )
+ * )
  */
 function term_exists( $term, $taxonomy = '', $parent_term = null ) {
 	global $_wp_suspend_cache_invalidation;
@@ -1711,12 +1748,16 @@ function term_is_ancestor_of( $term1, $term2, $taxonomy ) {
  *
  * @since 2.3.0
  *
- * @param array|object $term     The term to check.
+ * @param array|object|WP_Term $term     The term to check.
  * @param string       $taxonomy The taxonomy name to use.
  * @param string       $context  Optional. Context in which to sanitize the term.
  *                               Accepts 'raw', 'edit', 'db', 'display', 'rss',
  *                               'attribute', or 'js'. Default 'display'.
- * @return array|object Term with all fields sanitized.
+ * @return array|object|WP_Term Term with all fields sanitized.
+ *
+ * @phpstan-template T of object|array|\WP_Term
+ * @phpstan-param T $term
+ * @phpstan-return T
  */
 function sanitize_term( $term, $taxonomy, $context = 'display' ) {
 	$fields = array( 'term_id', 'name', 'description', 'slug', 'count', 'parent', 'term_group', 'term_taxonomy_id', 'object_id' );
@@ -2267,6 +2308,22 @@ function wp_delete_category( $cat_id ) {
  * @return WP_Term[]|int[]|string[]|string|WP_Error Array of terms, a count thereof as a numeric string,
  *                                                  or WP_Error if any of the taxonomies do not exist.
  *                                                  See WP_Term_Query::get_terms() for more information.
+ *
+ * @phpstan-return (
+ *   $object_ids is empty ? array{} : (
+ *     $taxonomies is empty ? array{} : (
+ *       $args is array{fields: 'count'}&array ? numeric-string : (
+ *         $args is array{fields: 'names'|'slugs'}&array ? list<string> : (
+ *           $args is array{fields: 'id=>name'|'id=>slug'}&array ? array<int, string> : (
+ *             $args is array{fields: 'id=>parent'}&array ? array<int, int> : (
+ *               $args is array{fields: 'ids'|'tt_ids'}&array ? list<int> : array<int, \WP_Term>
+ *             )
+ *           )
+ *         )
+ *       )|\WP_Error
+ *     )
+ *   )
+ * )
  */
 function wp_get_object_terms( $object_ids, $taxonomies, $args = array() ) {
 	if ( empty( $object_ids ) || empty( $taxonomies ) ) {
@@ -2595,7 +2652,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
 
 	// Seems unreachable. However, is used in the case that a term name is provided, which sanitizes to an empty string.
 	if ( empty( $slug ) ) {
-		$slug = sanitize_title( $slug, $term_id );
+		$slug = sanitize_title( $slug, (string) $term_id );
 
 		/** This action is documented in wp-includes/taxonomy.php */
 		do_action( 'edit_terms', $term_id, $taxonomy );
@@ -3368,7 +3425,7 @@ function wp_update_term( $term_id, $taxonomy, $args = array() ) {
 	$wpdb->update( $wpdb->terms, $data, compact( 'term_id' ) );
 
 	if ( empty( $slug ) ) {
-		$slug = sanitize_title( $name, $term_id );
+		$slug = sanitize_title( $name, (string) $term_id );
 		$wpdb->update( $wpdb->terms, compact( 'slug' ), compact( 'term_id' ) );
 	}
 
@@ -3515,7 +3572,7 @@ function wp_defer_term_counting( $defer = null ) {
 		$_defer = $defer;
 		// Flush any deferred counts.
 		if ( ! $defer ) {
-			wp_update_term_count( null, null, true );
+			wp_update_term_count( 0, '', true );
 		}
 	}
 

@@ -6,7 +6,7 @@
  * @subpackage Administration
  */
 
-// Confidence check.
+// @phpstan-ignore if.alwaysFalse (Confidence check)
 if ( false ) {
 	?>
 <!DOCTYPE html>

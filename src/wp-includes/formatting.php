@@ -941,6 +941,8 @@ function seems_utf8( $str ) {
  * @param false|string $charset       Optional. The character encoding of the string. Default false.
  * @param bool         $double_encode Optional. Whether to encode existing HTML entities. Default false.
  * @return string The encoded text with HTML entities.
+ *
+ * @phpstan-param scalar $text
  */
 function _wp_specialchars( $text, $quote_style = ENT_NOQUOTES, $charset = false, $double_encode = false ) {
 	$text = (string) $text;
@@ -1011,6 +1013,8 @@ function _wp_specialchars( $text, $quote_style = ENT_NOQUOTES, $charset = false,
  *                                double if set to 'double' or both if otherwise set.
  *                                Default is ENT_NOQUOTES.
  * @return string The decoded text without HTML entities.
+ *
+ * @phpstan-param scalar $text
  */
 function wp_specialchars_decode( $text, $quote_style = ENT_NOQUOTES ) {
 	$text = (string) $text;
@@ -1123,6 +1127,8 @@ function wp_specialchars_decode( $text, $quote_style = ENT_NOQUOTES ) {
  * @param bool   $strip  Optional. Whether to replace invalid sequences of bytes with the Unicode replacement
  *                       character (U+FFFD `�`). Default `false` returns an empty string for invalid UTF-8 inputs.
  * @return string The checked text.
+ *
+ * @phpstan-param scalar $text
  */
 function wp_check_invalid_utf8( $text, $strip = false ) {
 	$text = (string) $text;
@@ -2844,6 +2850,10 @@ function untrailingslashit( $value ) {
  *
  * @param string|array $gpc String or array of data to slash.
  * @return string|array Slashed `$gpc`.
+ *
+ * @phpstan-template T of string|array
+ * @phpstan-param T $gpc
+ * @phpstan-return T
  */
 function addslashes_gpc( $gpc ) {
 	return wp_slash( $gpc );
@@ -2856,6 +2866,10 @@ function addslashes_gpc( $gpc ) {
  *
  * @param mixed $value The value to be stripped.
  * @return mixed Stripped value.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function stripslashes_deep( $value ) {
 	return map_deep( $value, 'stripslashes_from_strings_only' );
@@ -2868,6 +2882,10 @@ function stripslashes_deep( $value ) {
  *
  * @param mixed $value The array or string to be stripped.
  * @return mixed The stripped value.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function stripslashes_from_strings_only( $value ) {
 	return is_string( $value ) ? stripslashes( $value ) : $value;
@@ -2880,6 +2898,10 @@ function stripslashes_from_strings_only( $value ) {
  *
  * @param mixed $value The array or string to be encoded.
  * @return mixed The encoded value.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function urlencode_deep( $value ) {
 	return map_deep( $value, 'urlencode' );
@@ -2892,6 +2914,10 @@ function urlencode_deep( $value ) {
  *
  * @param mixed $value The array or string to be encoded.
  * @return mixed The encoded value.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function rawurlencode_deep( $value ) {
 	return map_deep( $value, 'rawurlencode' );
@@ -2904,6 +2930,10 @@ function rawurlencode_deep( $value ) {
  *
  * @param mixed $value The array or string to be decoded.
  * @return mixed The decoded value.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function urldecode_deep( $value ) {
 	return map_deep( $value, 'urldecode' );
@@ -4653,6 +4683,8 @@ function htmlentities2( $text ) {
  *
  * @param string $text The text to be escaped.
  * @return string Escaped text.
+ *
+ * @phpstan-param scalar $text
  */
 function esc_js( $text ) {
 	$safe_text = wp_check_invalid_utf8( $text );
@@ -4681,6 +4713,8 @@ function esc_js( $text ) {
  *
  * @param string $text
  * @return string
+ *
+ * @phpstan-param scalar $text
  */
 function esc_html( $text ) {
 	$safe_text = wp_check_invalid_utf8( $text );
@@ -4704,8 +4738,10 @@ function esc_html( $text ) {
  *
  * @since 2.8.0
  *
- * @param string $text
+ * @param string $text . Non-string values will be cast to string.
  * @return string
+ *
+ * @phpstan-param scalar $text
  */
 function esc_attr( $text ) {
 	$safe_text = wp_check_invalid_utf8( $text );
@@ -4720,6 +4756,8 @@ function esc_attr( $text ) {
 	 *
 	 * @param string $safe_text The text after it has been escaped.
 	 * @param string $text      The text prior to being escaped.
+	 *
+	 * @phpstan-param scalar $text
 	 */
 	return apply_filters( 'attribute_escape', $safe_text, $text );
 }
@@ -4752,6 +4790,8 @@ function esc_textarea( $text ) {
  *
  * @param string $text Text to escape.
  * @return string Escaped text.
+ *
+ * @phpstan-param scalar $text
  */
 function esc_xml( $text ) {
 	$safe_text = wp_check_invalid_utf8( $text );
@@ -5782,6 +5822,10 @@ function sanitize_trackback_urls( $to_ping ) {
  *
  * @param string|array $value String or array of data to slash.
  * @return string|array Slashed `$value`, in the same type as supplied.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function wp_slash( $value ) {
 	if ( is_array( $value ) ) {
@@ -5805,6 +5849,10 @@ function wp_slash( $value ) {
  *
  * @param string|array $value String or array of data to unslash.
  * @return string|array Unslashed `$value`, in the same type as supplied.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-return T
  */
 function wp_unslash( $value ) {
 	return stripslashes_deep( $value );

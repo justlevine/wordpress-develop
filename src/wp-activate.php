@@ -37,7 +37,8 @@ if ( isset( $_GET['key'] ) && isset( $_POST['key'] ) && $_GET['key'] !== $_POST[
 if ( $key ) {
 	$redirect_url = remove_query_arg( 'key' );
 
-	if ( remove_query_arg( false ) !== $redirect_url ) {
+	// If we still have query args, stash the key and redirect to handle them.
+	if ( remove_query_arg( '' ) !== $redirect_url ) {
 		setcookie( $activate_cookie, $key, 0, $activate_path, COOKIE_DOMAIN, is_ssl(), true );
 		wp_safe_redirect( $redirect_url );
 		exit;

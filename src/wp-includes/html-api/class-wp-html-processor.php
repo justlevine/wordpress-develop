@@ -583,6 +583,8 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 * @since 6.7.0
 	 *
 	 * @param string $message Explains support is missing in order to parse the current node.
+	 *
+	 * @phpstan-return never
 	 */
 	private function bail( string $message ) {
 		$here  = $this->bookmarks[ $this->state->current_token->bookmark_name ];
@@ -5102,9 +5104,9 @@ class WP_HTML_Processor extends WP_HTML_Tag_Processor {
 	 *
 	 * @throws Exception When unable to allocate requested bookmark.
 	 *
-	 * @return string|false Name of created bookmark, or false if unable to create.
+	 * @return string Name of created bookmark
 	 */
-	private function bookmark_token() {
+	private function bookmark_token(): string {
 		if ( ! parent::set_bookmark( ++$this->bookmark_counter ) ) {
 			$this->last_error = self::ERROR_EXCEEDED_MAX_BOOKMARKS;
 			throw new Exception( 'could not allocate bookmark' );

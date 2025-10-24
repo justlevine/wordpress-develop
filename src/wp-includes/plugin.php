@@ -277,6 +277,8 @@ function apply_filters_ref_array( $hook_name, $args ) {
  * @return bool|int If `$callback` is omitted, returns boolean for whether the hook has
  *                  anything registered. When checking a specific function, the priority
  *                  of that hook is returned, or false if the function is not attached.
+ *
+ * @phpstan-return ( $callback is false ? bool : (false|int) )
  */
 function has_filter( $hook_name, $callback = false ) {
 	global $wp_filter;
@@ -584,6 +586,8 @@ function do_action_ref_array( $hook_name, $args ) {
  * @return bool|int If `$callback` is omitted, returns boolean for whether the hook has
  *                  anything registered. When checking a specific function, the priority
  *                  of that hook is returned, or false if the function is not attached.
+ *
+ * @phpstan-return ( $callback is false ? bool : (false|int) )
  */
 function has_action( $hook_name, $callback = false ) {
 	return has_filter( $hook_name, $callback );
@@ -671,6 +675,8 @@ function doing_action( $hook_name = null ) {
  *
  * @param string $hook_name The name of the action hook.
  * @return int The number of times the action hook has been fired.
+ *
+ * @phpstan-return int<0, max>
  */
 function did_action( $hook_name ) {
 	global $wp_actions;

@@ -392,6 +392,8 @@ function is_registered_sidebar( $sidebar_id ) {
  *                                         Only available for WP_Widget based widgets.
  * }
  * @param mixed      ...$params       Optional additional parameters to pass to the callback function when it's called.
+ *
+ * @phpstan-param string|callable|callable-string $output_callback
  */
 function wp_register_sidebar_widget( $id, $name, $output_callback, $options = array(), ...$params ) {
 	global $wp_registered_widgets, $wp_registered_widget_controls, $wp_registered_widget_updates, $_wp_deprecated_widgets_callbacks;
@@ -532,6 +534,8 @@ function wp_unregister_sidebar_widget( $id ) {
  *                               text widget. The widget ID will end up looking like `{$id_base}-{$unique_number}`.
  * }
  * @param mixed      ...$params        Optional additional parameters to pass to the callback function when it's called.
+ *
+ * @phpstan-param string|callable|callable-string $control_callback
  */
 function wp_register_widget_control( $id, $name, $control_callback, $options = array(), ...$params ) {
 	global $wp_registered_widget_controls, $wp_registered_widget_updates, $wp_registered_widgets, $_wp_deprecated_widgets_callbacks;
@@ -598,6 +602,8 @@ function wp_register_widget_control( $id, $name, $control_callback, $options = a
  * @param array    $options         Optional. Widget control options. See wp_register_widget_control().
  *                                  Default empty array.
  * @param mixed    ...$params       Optional additional parameters to pass to the callback function when it's called.
+ *
+ * @phpstan-param string|callable|callable-string $update_callback
  */
 function _register_widget_update_callback( $id_base, $update_callback, $options = array(), ...$params ) {
 	global $wp_registered_widget_updates;
@@ -633,8 +639,9 @@ function _register_widget_update_callback( $id_base, $update_callback, $options 
  * @param array      $options       Optional. Widget control options. See wp_register_widget_control().
  *                                  Default empty array.
  * @param mixed      ...$params     Optional additional parameters to pass to the callback function when it's called.
+ *
+ * @phpstan-param string|callable|callable-string $form_callback
  */
-
 function _register_widget_form_callback( $id, $name, $form_callback, $options = array(), ...$params ) {
 	global $wp_registered_widget_controls;
 

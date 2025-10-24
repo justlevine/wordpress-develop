@@ -855,6 +855,8 @@ function delete_user_option( $user_id, $option_name, $is_global = false ) {
  * @param int $user_id User ID.
  *
  * @return WP_User|false WP_User object on success, false on failure.
+ *
+ * @phpstan-return ( $user_id is int<min, 0> ? false : (\WP_User|false) )
  */
 function get_user( $user_id ) {
 	return get_user_by( 'id', $user_id );
@@ -908,7 +910,9 @@ function get_users( $args = array() ) {
  *     @type string $exclude       An array, comma-, or space-separated list of user IDs to exclude. Default empty.
  *     @type string $include       An array, comma-, or space-separated list of user IDs to include. Default empty.
  * }
- * @return string|null The output if echo is false. Otherwise null.
+ * @return string|void The output if echo is false. Otherwise void.
+ *
+ * @phpstan-return ( $args is array{echo:false}&array ? string : void )
  */
 function wp_list_users( $args = array() ) {
 	$defaults = array(
@@ -2342,7 +2346,7 @@ function wp_insert_user( $userdata ) {
 	 * check if current email and new email are the same, and check `email_exists`
 	 * accordingly.
 	 */
-	if ( ( ! $update || ( ! empty( $old_user_data ) && 0 !== strcasecmp( $user_email, $old_user_data->user_email ) ) )
+	if ( ( ! $update || 0 !== strcasecmp( $user_email, $old_user_data->user_email ) ) 
 		&& ! defined( 'WP_IMPORTING' )
 		&& email_exists( $user_email )
 	) {

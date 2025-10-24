@@ -31,6 +31,8 @@ require ABSPATH . WPINC . '/option.php';
  * @param bool   $translate Whether the return date should be translated. Default true.
  * @return string|int|false Integer if `$format` is 'U' or 'G', string otherwise.
  *                          False on failure.
+ *
+ * @phpstan-return ( $format is 'G'|'U' ? int : string )|false
  */
 function mysql2date( $format, $date, $translate = true ) {
 	if ( empty( $date ) ) {
@@ -74,6 +76,8 @@ function mysql2date( $format, $date, $translate = true ) {
  *                     or PHP date format string (e.g. 'Y-m-d').
  * @param bool   $gmt  Optional. Whether to use GMT timezone. Default false.
  * @return int|string Integer if `$type` is 'timestamp' or 'U', string otherwise.
+ *
+ * @phpstan-return ($type is 'timestamp'|'U' ? int : string)
  */
 function current_time( $type, $gmt = false ) {
 	// Don't use non-GMT timestamp, unless you know the difference and really need to.
@@ -463,6 +467,8 @@ function number_format_i18n( $number, $decimals = 0 ) {
  * @param int|string $bytes    Number of bytes. Note max integer size for integers.
  * @param int        $decimals Optional. Precision of number of decimal places. Default 0.
  * @return string|false Number string on success, false on failure.
+ *
+ * @phpstan-return ( $bytes is not numeric ? false : ($bytes is int<min, -1>|'0' ? false : string))
  */
 function size_format( $bytes, $decimals = 0 ) {
 	$quant = array(
@@ -1014,6 +1020,8 @@ function wp_get_http_headers( $url, $deprecated = false ) {
  * @global string $previousday The day of the previous post in the loop.
  *
  * @return int 1 when new day, 0 if not a new day.
+ *
+ * @phpstan-return 0|1
  */
 function is_new_day() {
 	global $currentday, $previousday;
@@ -1587,6 +1595,8 @@ function get_num_queries() {
  *
  * @param string $yn Character string containing either 'y' (yes) or 'n' (no).
  * @return bool True if 'y', false on anything else.
+ *
+ * @phpstan-return ($yn is 'y' ? true : false)
  */
 function bool_from_yn( $yn ) {
 	return ( 'y' === strtolower( $yn ) );
@@ -1864,6 +1874,8 @@ function is_blog_installed() {
  * @param int|string $action    Optional. Nonce action name. Default -1.
  * @param string     $name      Optional. Nonce name. Default '_wpnonce'.
  * @return string Escaped URL with nonce action added.
+ *
+ * @phpstan-param -1|string $action
  */
 function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
 	$actionurl = str_replace( '&amp;', '&', $actionurl );
@@ -1895,6 +1907,8 @@ function wp_nonce_url( $actionurl, $action = -1, $name = '_wpnonce' ) {
  * @param bool       $referer Optional. Whether to set the referer field for validation. Default true.
  * @param bool       $display Optional. Whether to display or return hidden form field. Default true.
  * @return string Nonce field HTML markup.
+ *
+ * @phpstan-param -1|string $action
  */
 function wp_nonce_field( $action = -1, $name = '_wpnonce', $referer = true, $display = true ) {
 	$name        = esc_attr( $name );
@@ -3765,6 +3779,8 @@ function wp_nonce_ays( $action ) {
  *                                  is a WP_Error.
  *     @type bool   $exit           Whether to exit the process after completion. Default true.
  * }
+ *
+ * @phpstan-return ($args is array{exit: false}&array ? void : never)
  */
 function wp_die( $message = '', $title = '', $args = array() ) {
 	global $wp_query;
@@ -4381,6 +4397,9 @@ function _wp_die_process_input( $message, $title = '', $args = array() ) {
  * @param int   $depth Optional. Maximum depth to walk through $value. Must be
  *                     greater than 0. Default 512.
  * @return string|false The JSON encoded string, or false if it cannot be encoded.
+ *
+ * @phpstan-param int<1,max> $depth
+ * @phpstan-return non-empty-string|false
  */
 function wp_json_encode( $value, $flags = 0, $depth = 512 ) {
 	$json = json_encode( $value, $flags, $depth );
@@ -4413,6 +4432,11 @@ function wp_json_encode( $value, $flags = 0, $depth = 512 ) {
  * @param mixed $value Variable (usually an array or object) to encode as JSON.
  * @param int   $depth Maximum depth to walk through $value. Must be greater than 0.
  * @return mixed The sanitized data that shall be encoded to JSON.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $value
+ * @phpstan-param int<1,max> $depth
+ * @phpstan-return T
  */
 function _wp_json_sanity_check( $value, $depth ) {
 	if ( $depth < 0 ) {
@@ -4970,6 +4994,8 @@ function wp_parse_args( $args, $defaults = array() ) {
  *
  * @param array|string $input_list List of values.
  * @return array Array of values.
+ *
+ * @phpstan-return ($input_list is array ? array<scalar> : list<string>)
  */
 function wp_parse_list( $input_list ) {
 	if ( ! is_array( $input_list ) ) {
@@ -5276,6 +5302,11 @@ function _wp_to_kebab_case( $input_string ) {
  *
  * @param mixed $data Variable to check.
  * @return bool Whether the variable is a list.
+ *
+ * @phpstan-template T
+ * @phpstan-param T $data
+ * @phpstan-return (T is array ? (key-of<T> is int ? true : false) : false)
+ * @phpstan-assert-if-true (T is list ? T : array<int, value-of<T>>) $data
  */
 function wp_is_numeric_array( $data ) {
 	if ( ! is_array( $data ) ) {
@@ -6087,6 +6118,8 @@ function _doing_it_wrong( $function_name, $message, $version ) {
  *                              before passing to this function to avoid being stripped {@see wp_kses()}.
  * @param int    $error_level   Optional. The designated error type for this error.
  *                              Only works with E_USER family of constants. Default E_USER_NOTICE.
+ *
+ * @phpstan-param \E_USER_ERROR|\E_USER_WARNING|\E_USER_NOTICE|\E_USER_DEPRECATED $error_level
  */
 function wp_trigger_error( $function_name, $message, $error_level = E_USER_NOTICE ) {
 
@@ -6239,6 +6272,12 @@ function iis7_supports_permalinks() {
  * @param string   $file          File path.
  * @param string[] $allowed_files Optional. Array of allowed files. Default empty array.
  * @return int 0 means nothing is wrong, greater than 0 means something was wrong.
+ *
+ * @phpstan-return (
+ *   $file is '' ? 0 : (
+ *     $allowed_files is empty ? (0|1|2) : (0|1|2|3)
+ *   )
+ * )
  */
 function validate_file( $file, $allowed_files = array() ) {
 	if ( ! is_scalar( $file ) || '' === $file ) {
@@ -6983,6 +7022,8 @@ function __return_false() { // phpcs:ignore WordPress.NamingConventions.ValidFun
  * @since 3.0.0
  *
  * @return int 0.
+ *
+ * @phpstan-return 0
  */
 function __return_zero() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	return 0;
@@ -6996,6 +7037,8 @@ function __return_zero() { // phpcs:ignore WordPress.NamingConventions.ValidFunc
  * @since 3.0.0
  *
  * @return array Empty array.
+ *
+ * @phpstan-return array{}
  */
 function __return_empty_array() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	return array();
@@ -7024,6 +7067,8 @@ function __return_null() { // phpcs:ignore WordPress.NamingConventions.ValidFunc
  * @see __return_null()
  *
  * @return string Empty string.
+ *
+ * @phpstan-return ''
  */
 function __return_empty_string() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName.FunctionDoubleUnderscore,PHPCompatibility.FunctionNameRestrictions.ReservedFunctionNames.FunctionDoubleUnderscore
 	return '';
@@ -7237,6 +7282,8 @@ function wp_allowed_protocols() {
  *                             the raw array returned. Default true.
  * @return string|array Either a string containing a reversed comma separated trace or an array
  *                      of individual calls.
+ *
+ * @phpstan-return ($pretty is true ? string : list<string>)
  */
 function wp_debug_backtrace_summary( $ignore_class = null, $skip_frames = 0, $pretty = true ) {
 	static $truncate_paths;
@@ -8005,6 +8052,8 @@ function wp_is_uuid( $uuid, $version = null ) {
  *
  * @param string $prefix Prefix for the returned ID.
  * @return string Unique ID.
+ *
+ * @phpstan-return ($prefix is empty ? numeric-string : ($prefix is numeric ? numeric-string : string))
  */
 function wp_unique_id( $prefix = '' ) {
 	static $id_counter = 0;
