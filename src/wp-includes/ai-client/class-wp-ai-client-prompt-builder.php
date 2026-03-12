@@ -178,11 +178,6 @@ class WP_AI_Client_Prompt_Builder {
 	 */
 	public function __construct( ProviderRegistry $registry, $prompt = null ) {
 		try {
-			if ( ! wp_supports_ai() ) {
-				// The catch block will convert this to a WP_Error.
-				throw new \RuntimeException( __( 'AI features are not supported in this environment.' ) );
-			}
-
 			$this->builder = new PromptBuilder( $registry, $prompt );
 		} catch ( Exception $e ) {
 			$this->builder = new PromptBuilder( $registry );
@@ -281,6 +276,14 @@ class WP_AI_Client_Prompt_Builder {
 	 * @return mixed The result of the method call.
 	 */
 	public function __call( string $name, array $arguments ) {
+		// Check whether AI is supported before proceeding with any method call.
+		if ( null === $this->error && ! wp_supports_ai() ) {
+			$this->error = new WP_Error(
+				'ai_not_supported',
+				__( 'AI features are not supported in this environment.' )
+			);
+		}
+
 		/*
 		 * If an error occurred in a previous method call, either return the error for terminate methods,
 		 * or return the same instance for other methods to maintain the fluent interface.
